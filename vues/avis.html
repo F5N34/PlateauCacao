@@ -46,6 +46,67 @@
   font-weight: normal;
   font-style: normal;
 }
+
+.panel .video_temoignage_gauche {
+  margin-left : 2%;
+  width : 49%;
+}
+
+.panel .video_temoignage_droite {
+  margin-right : 2%;
+  width : 150%;
+}
+
+.panel .text_temoignage_gauche {
+  border : 2px green double;
+  margin-top : -32.5%;
+  width : 10%;
+  margin-left : -40%;
+}
+
+.panel .text_temoignage_droite {
+  border : 2px red double;
+  
+}
+
+
+.accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
 /* =======================================================
 *
 * 	Template Style
@@ -1372,39 +1433,58 @@ form label {
 
 		</div>
 	</nav>
-        
         <br/>
         <br/>
         <br/>
-
-
-	<section id="gtco-bite" data-section="avis">
+	<section id="gtco-temoignage" data-section="avis">
         <div class="overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-md-offset-0 text-center">
 					<div class="display-t">
 						<div class="display-tc">
-                            <br/>
-							<button class="accordion">Candidats</button>
-                            <div class="panel">
-                                <br/>                                
-                                <h4>Témoignage d'un nouvel arrivant à l'école EPSI en 1ère année, campus de Montpellier : </h4>
-                                <br/>
-                                <p>Lien vidéo</p>
-                                <br/>
-                                <h4>Témoignage d'un élève intégrant l'EPSI après un BTS extérieur à l'école :</h4>
-                                <br/>
-                                <p>Lien vidéo</p>                                
-                            </div>
-                            <br/>
-                            <br/>
-                            <button class="accordion">Professionnels</button>
-                            <div class="panel">
-                                <br/>
-                                <h4>Témoignage d'un professionnel :</h4>
-                                <p>Lien vidéo </p>
-                            </div>
+              <br/>
+              <button class="accordion">Candidats</button>
+              <div class="panel">
+                <br/>
+                <h4>Témoignage d'un nouvel arrivant à l'école EPSI WIS, campus de Montpellier : </h4>
+                <div class="video_temoignage_gauche">
+                  <iframe width="650" height="350" src="https://www.youtube.com/embed/TSf-gNlRw8U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="text_temoignage_gauche">
+                    <p>Salut</p>
+                  </div>
+                <br/>
+                <br/>
+                <h4>Témoignage d'un élève ayant intégré l'école en 1ère année :</h4>
+                <div class="video_temoignage_droite">
+                  <iframe width="650" height="350" src="https://www.youtube.com/embed/_AEYv4i5J4E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="text_temoignage_droite">
+                    <p>Salut</p>
+                  </div>
+                <br/>
+                <br/>
+                <h4>Témoignage d'élèves intégrant l'EPSI après un BTS extérieur à l'école :</h4>
+                <div class="video_temoignage_gauche">
+                  <iframe width="650" height="350" src="https://www.youtube.com/embed/_BeHtN6bnis" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>                                </div>                                                             
+                </div>
+                <div class="text_temoignage_gauche">
+                  <p>Salut</p>
+                </div>                
+                <br/>
+                <br/>
+                <button class="accordion">Professionnels</button>
+                <div class="panel">
+                  <br/>
+                  <h4>Témoignage d'une professeure :</h4>
+                  <div class="video_temoignage_droite">
+                    <iframe width="650" height="350" src="https://www.youtube.com/embed/fxRq0z8im8E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+                  <div class="text_temoignage_droite">
+                      <p>Salut</p>
+                    </div>
+                </div>
 						</div>
 					</div>
 				</div>
