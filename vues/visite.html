@@ -22,38 +22,7 @@
   
 	<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400, 900" rel="stylesheet"> -->
   
-  <script>
-    // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-    
-    var modal = document.getElementById('myModal');
-    
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
-    
-    // Get the <span> element that closes the modal
-      var span = document.getElementsByClassName("close")[0];
-      
-      // When the user clicks on the button, open the modal
-      btn.onclick = function() {
-        alert('');
-        modal.style.display = "block";
-      }
-      
-      // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-          modal.style.display = "none";
-        }
-        
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-          if (event.target == modal) {
-            modal.style.display = "none";
-          }
-        } 
-        
-      </script>
+      <script src="../js/three.js"></script>
       
       <!-- Animate.css -->
       <link rel="stylesheet" href="../css/animate.css">
@@ -347,6 +316,11 @@
             text-decoration: none;
             cursor: pointer;
           } 
+          
+          .piece:hover {
+            fill: #f9d055;
+            cursor: pointer;
+          }
         </style>
       </head>
       <body>
@@ -402,13 +376,13 @@
                   80,439Z"></path>
                 </g>
                 <g id="pieces_en_couleur">
-                  <path onclick="openMod();" class="st3 DyroBwZW_2" d="M182,410.7L183,269.7L80,268L80,356.5L131,356L134,410Z"></path>
-                  <path class="st3 DyroBwZW_3" width="108" height="140.5" d="M182 269 L290 269 L290 409.5 L182 409.5 Z"></path>
-                  <path class="st3 DyroBwZW_4" d="M290,409L290,269L469.7,269L469.7,410Z"></path>
-                  <path class="st3 DyroBwZW_5" width="132.7" height="88" d="M590.3 268 L723 268 L723 356 L590.3 356 Z"></path>
-                  <path class="st3 DyroBwZW_6" d="M721.7,560.3L721.7,433.5L547.7,433.5L547.7,562Z"></path>
-                  <path class="st3 DyroBwZW_7" d="M289.7,439L80,439L80,617L289.5,617Z"></path>
-                  <path class="st3 DyroBwZW_8" d="M486.5,479L379,479L379,557L486,557Z"></path>
+                  <a href="apo1.html"><path class="st3 DyroBwZW_2 piece" d="M182,410.7L183,269.7L80,268L80,356.5L131,356L134,410Z"></path></a>
+                  <a href="apo1.html"><path class="st3 DyroBwZW_3 piece" width="108" height="140.5" d="M182 269 L290 269 L290 409.5 L182 409.5 Z"></path></a>
+                  <a href="apo1.html"><path class="st3 DyroBwZW_4 piece" d="M290,409L290,269L469.7,269L469.7,410Z"></path></a>
+                  <a href="apo1.html"><path class="st3 DyroBwZW_5 piece" width="132.7" height="88" d="M590.3 268 L723 268 L723 356 L590.3 356 Z"></path></a>
+                  <a href="apo1.html"><path class="st3 DyroBwZW_6 piece" d="M721.7,560.3L721.7,433.5L547.7,433.5L547.7,562Z"></path></a>
+                  <a href="apo1.html"><path class="st3 DyroBwZW_7 piece" d="M289.7,439L80,439L80,617L289.5,617Z"></path></a>
+                  <a href="apo1.html"><path class="st3 DyroBwZW_8 piece" d="M486.5,479L379,479L379,557L486,557Z"></path></a>
                 </g>
                 <g id="map">
                   <path class="st4 DyroBwZW_9" d="M80,615L80,269L184.3,269L723,269L723,615L80,615"></path>
@@ -455,6 +429,9 @@
                   <div class="modal-content">
                     <span class="close">&times;</span>
                     <p>Some text in the Modal..</p>
+                    <script src="../js/three.js"></script>
+                    <script src="../js/app.js">
+                    </script>
                   </div>
                   
                 </div>
@@ -521,7 +498,7 @@
                 tablinks[i].className = tablinks[i].className.replace(" active", "");
               }
             }
-
+            
             // Get the modal
             var modal = document.getElementById('myModal');
             
@@ -547,6 +524,42 @@
                   }
                 } 
                 
+                // function getPhoto() {
+                //   const scene = new THREE.Scene();
+                //   const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 10000); //permet de positionner la caméra
+                //   //(fov,aspect,near,far)
+                  
+                //   const controls = new THREE.OrbitControls(camera); //on donne une camera a notre controleur
+                  
+                //   //controls.update() must be called after any manual changes to the camera's transform
+                //   camera.position.set(200 , 0 , 0); //position de la cam, ici elle est au centre (intérieur)(x,y,z)
+                //   controls.update(); //met à jour les controles
+                  
+                //   const geometry = new THREE.SphereGeometry(400, 100, 100);
+                //   const textureLoad = new THREE.TextureLoader();
+                //   const texture = textureLoad.load('../images/apo5.jpg')
+                //   const material = new THREE.MeshBasicMaterial({
+                //     map: texture,
+                //     // color: 0xffff00,
+                //     side: THREE.DoubleSide //permet d'avoir la texture à l'extérieur et à l'intérieur
+                //   });
+                //   const sphere = new THREE.Mesh(geometry, material);
+                //   scene.add(sphere);
+                  
+                //   const renderer = new THREE.WebGLRenderer(); //va permettre de rendre visible la scène à l'aide de WebGL
+                //   //renderer.setSize(window.innerWidth, window.innerHeight);
+                //   renderer.setSize($('#myModal').innerWidth, $('#myModal').innerHeight);
+                //   document.body.appendChild(renderer.domElement); //ajoute la scène dans notre body
+                  
+                //   function animate() {
+                    
+                //     requestAnimationFrame( animate );
+                //     renderer.render( scene, camera );
+                    
+                //   }
+                //   animate(); //met en place
+                  
+                //}
               </script>
             </body>
             </html>
