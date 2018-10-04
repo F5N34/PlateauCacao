@@ -46,9 +46,311 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+  <style>
+      .accordion {
+          background-color: #eee;
+          color: #444;
+          cursor: pointer;
+          padding: 18px;
+          width: 100%;
+          border: none;
+          text-align: left;
+          outline: none;
+          font-size: 15px;
+          transition: 0.4s;
+      }
+      
+      .accordion:hover {
+          background-color: #ccc;
+      }
+      
+      .accordion:after {
+          content: '\002B';
+          color: #777;
+          font-weight: bold;
+          float: right;
+          margin-left: 5px;
+      }
+      
+      .panel {
+          padding: 0 18px;
+          background-color: white;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.2s ease-out;
+      }
 
+      /* Bounce To Right */
+.hvr-bounce-to-right {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+.hvr-bounce-to-right:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: purple;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-bounce-to-right:hover, .hvr-bounce-to-right:focus, .hvr-bounce-to-right:active {
+  color: white;
+}
+.hvr-bounce-to-right:hover:before, .hvr-bounce-to-right:focus:before, .hvr-bounce-to-right:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+/*Style Paul */
+.tab {
+      overflow: hidden;
+      border: 1px solid #ccc;
+      background-color: #38B8D7;
+      color: white;
+    }
+ 
+    /* Style the buttons that are used to open the tab content */
+    .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+    }
+ 
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+        background-color: #f9d055;
+    }
+ 
+    /* Create an active/current tablink class */
+    .tab button.active {
+        background-color: #f9d055;
+    }
+ 
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border-top: none;
+    }
+
+    /*Nabar*/
+    .gtco-nav {
+  position: fixed;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 1001;
+  background: #fff;
+  webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+}
+@media screen and (max-width: 768px) {
+  .gtco-nav {
+    padding: 20px 0;
+  }
+}
+.gtco-nav #gtco-logo {
+  font-size: 30px;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+.gtco-nav #gtco-logo em {
+  color: #fff;
+  font-weight: 100;
+  font-style: normal;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+.gtco-nav #gtco-logo a {
+  padding: 0px 10px;
+  color: #fff;
+  font-weight: 700;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+@media screen and (max-width: 768px) {
+  .gtco-nav .menu-1, .gtco-nav .menu-2 {
+    display: none;
+  }
+}
+.gtco-nav ul {
+  padding: 0;
+  margin: 1px 0 0 0;
+}
+.gtco-nav ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: inline;
+}
+.gtco-nav ul li a {
+   
+  font-size: 12px;
+  padding: 30px 10px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 400 !important;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.gtco-nav ul li a:hover, .gtco-nav ul li a:focus, .gtco-nav ul li a:active {
+  color: #000000;
+}
+.gtco-nav ul li.has-dropdown {
+  position: relative;
+}
+.gtco-nav ul li.has-dropdown .dropdown {
+  width: 130px;
+  -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+  z-index: 1002;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  text-align: left;
+  background: #fff;
+  padding: 20px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-transition: 0s;
+  -o-transition: 0s;
+  transition: 0s;
+}
+.gtco-nav ul li.has-dropdown .dropdown:before {
+  bottom: 100%;
+  left: 40px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-bottom-color: #fff;
+  border-width: 8px;
+  margin-left: -8px;
+}
+.gtco-nav ul li.has-dropdown .dropdown li {
+  display: block;
+  margin-bottom: 7px;
+}
+.gtco-nav ul li.has-dropdown .dropdown li:last-child {
+  margin-bottom: 0;
+}
+.gtco-nav ul li.has-dropdown .dropdown li a {
+  padding: 2px 0;
+  display: block;
+  color: #999999;
+  line-height: 1.2;
+  text-transform: none;
+  font-size: 15px;
+}
+.gtco-nav ul li.has-dropdown .dropdown li a:hover {
+  color: #000;
+}
+.gtco-nav ul li.has-dropdown .dropdown li.active > a {
+  color: #000 !important;
+}
+.gtco-nav ul li.has-dropdown:hover a, .gtco-nav ul li.has-dropdown:focus a {
+  color: #fff;
+}
+.gtco-nav ul li.btn-cta a {
+  color: #fff;
+}
+.gtco-nav ul li.btn-cta a span {
+  border: none !important;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 20px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  background: #F9D055;
+  color: #fff;
+  border-radius: 30px;
+}
+ 
+.gtco-nav ul li.active > a {
+  color: #fff !important;
+}
+.gtco-nav.scrolled {
+  background: #fff;
+  webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+}
+.gtco-nav.scrolled ul {
+  padding: 0;
+  margin: 1px 0 0 0;
+}
+.gtco-nav.scrolled ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: inline;
+}
+.gtco-nav.scrolled ul li a {
+  color: rgba(0, 0, 0, 0.5);
+}
+ 
+.gtco-nav.scrolled ul li.active > a {
+  color: #f9d055 !important;
+}
+.gtco-nav.scrolled ul li.btn-cta a {
+  color: #fff;
+}
+.gtco-nav.scrolled ul li.btn-cta a span {
+  border: none !important;
+  background: #f9d055;
+  padding: 4px 20px;    
+}
+           
+.gtco-nav.scrolled #gtco-logo em, .gtco-nav.scrolled #gtco-logo a {
+  color: #000;
+}
+  </style>
 	</head>
-	<body>
 
 	<div class="gtco-loader"></div>
 
@@ -61,7 +363,7 @@
 				</div>
 				<div class="col-xs-10 text-right">
 					<ul>
-						<li class="active"><a href="../index.html" data-nav-section="accueil">Accueil</a></li>
+						<li class=""><a href="../index.html" data-nav-section="accueil">Accueil</a></li>
 						<li><a href="vieEtudiante.html">Vie étudiante</a></li>
 						<li><a href="visite.html" data-nav-section="visite">Visite</a></li>
 						<li><a href="formations.html" data-nav-section="formations">Formations</a></li>
@@ -71,169 +373,182 @@
 					</ul>
 				</div>
 			</div>
-
 		</div>
-	</nav>
-
-	<section id="gtco-about" data-section="about">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-					<h2 class="heading-colored">Se restaurer</h2>
-					<p>Le campus est idéalement situé à proximmité de commerces et de restaurants. </p>
-					<p><a href="#" class="read-more">Read more <i class="icon-chevron-right"></i></a></p>
-        </div>
-        <div class="col-md-6 col-md-pull-1 animate-box" data-animate-effect="fadeInLeft">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d11027.922651852236!2d3.84052528620344!3d43.6404760976283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sRestaurants!5e0!3m2!1sfr!2sfr!4v1538470854461" width="600" height="450" frameborder="0" style="border:2px;border-radius:10px;color:black;" allowfullscreen></iframe>
-          </div>
-			</div>
-		</div>
-	</section>
-
-  <section id="gtco-about" data-section="about">
+  </nav>     
+          
+  <body>
+    <section id="gtco-about" data-section="about">
       <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-pull-1 animate-box" data-animate-effect="fadeInRight">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d11027.922651852236!2d3.84052528620344!3d43.6404760976283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sRestaurants!5e0!3m2!1sfr!2sfr!4v1538470854461" width="600" height="450" frameborder="0" style="border:2px;border-radius:10px;color:black;" allowfullscreen></iframe>
-            </div>
-          <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-            <h2 class="heading-colored">Se Loger</h2>
-            <p>My Studapart est une plateforme de logement – location, colocation, sous-location – exclusivement réservée aux étudiants des écoles membres de HEP EDUCATION.
-
-                Que ce soit pour un logement en France ou à l’étranger (Europe dans un premier temps, puis Etats-Unis et Chine à terme), en proximité de l’un de nos campus ou d’un prochain stage ou séjour à l’international, cette plateforme permet aux étudiants de trouver ou proposer :
-                
-                une location,
-                des colocataires pour former des colocations,
-                une sous-location,
-                une chambre temporaire.
-                My Studapart est consultables en trois langues : français, anglais & chinois.
-                
-                2 façons de se connecter à l’aide des identifiants e-campus :
-                
-                Directement sur epsi.my-studapart.com
-                Via chaque e-campus, rubrique « Mes Services » (en ressaisissant les identifiants)
-                A noter : My Studapart est un service offert par HEP EDUCATION aux étudiants de l’ensemble de ses écoles membres. HEP EDUCATION ne tire aucun bénéfice financier du fonctionnement de cette plateforme.
-                </p>
-            <p><a href="#" class="read-more">Read more <i class="icon-chevron-left"></i></a></p>
+          <div class="tab">
+              <button class="tablinks" onclick="openCity(event, 'loger')" style="width: 20%">Se loger</button>
+              <button class="tablinks" onclick="openCity(event, 'restaurer')" style="width: 20%">Se restaurer</button>
+              <button class="tablinks" onclick="openCity(event, 'bde')" style="width: 20%">BDE</button>
+              <button class="tablinks" onclick="openCity(event, 'mydil')" style="width: 20%">My DIL</button>
+              <button class="tablinks" onclick="openCity(event, 'suaps')" style="width: 20%">SUAPS</button>
           </div>
-        </div>
       </div>
-    </section>
+      
+      <div id="loger" class="tabcontent"><br>
+        <section id="gtco-our-team" data-section="our-team">
+            <div class="container">
+              <div class="row team-item gtco-team-reverse">
+                <div class="col-md-6 col-md-push-7 animate-box" data-animate-effect="fadeInRight">
+                  <div class="img-shadow">
+                    <img src="../images/loger.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by GetTemplates.co">
+                  </div>
+                </div>
+                <div class="col-md-6  col-md-pull-6 animate-box" data-animate-effect="fadeInRight">
+                  <h2>My Studapart</h2>
+                  <p>My Studapart est une plateforme de logement – location, colocation, sous-location – exclusivement réservée aux étudiants des écoles membres de HEP EDUCATION.</p>
+                  <p>Que ce soit pour un logement en France ou à l’étranger (Europe dans un premier temps, puis Etats-Unis et Chine à terme), en proximité de l’un de nos campus ou d’un prochain stage ou séjour à l’international, cette plateforme permet aux étudiants de trouver ou proposer :</p>
+                  <p>une location,
+                    des colocataires pour former des colocations,
+                    une sous-location,
+                    une chambre temporaire.
+                    My Studapart est consultables en trois langues : français, anglais & chinois.</p>
+                  <p>2 façons de se connecter à l’aide des identifiants e-campus :</p>
+                  <p>Directement sur epsi.my-studapart.com
+                    Via chaque e-campus, rubrique « Mes Services » (en ressaisissant les identifiants)
+                    A noter : My Studapart est un service offert par HEP EDUCATION aux étudiants de l’ensemble de ses écoles membres. HEP EDUCATION ne tire aucun bénéfice financier du fonctionnement de cette plateforme.</p>
+                  <p><a href="http://www.epsi.fr" target="_blank"class="read-more">En savoir plus <i class="icon-chevron-right"></i></a></p>
+                  </div>
+              </div>
+        
+            </div>
+          </section>       
+      </div>
+                 
+      <div id="restaurer" class="tabcontent">
+        <section id="gtco-our-team" data-section="our-team">
+            <div class="container">
+              <div class="row team-item gtco-team">
+                <div class="col-md-6 col-md-pull-1 animate-box"  data-animate-effect="fadeInLeft">
+                  <div class="">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d11027.922651852236!2d3.84052528620344!3d43.6404760976283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sRestaurants!5e0!3m2!1sfr!2sfr!4v1538470854461" width="600" height="400" frameborder="0" style="border:2px;border-radius:10px;color:black;" allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                  <h2>Se restaurer</h2>
+                  <p>Le campus est situé au nord de montpellier qui offre une multitude de possibilités en restauration rapide pour les étudiant. De plus des food-trucks sont présents toute l'année offrant burgers et  bien d'autres choix !</p>
+                  <p><a href="http://fr.lmgtfy.com/?q=Comment+se+nourrir+en+tant+qu%27%C3%A9tudiant+%C3%A0+Montpellier+%3F" target="_blank" class="read-more">En savoir plus <i class="icon-chevron-right"></i></a></p>
+                </div>
+              </div>
+            </div>
+          </section>
+      </div>
+                 
+      <div id="bde" class="tabcontent"><br>
+        <section id="gtco-our-team" data-section="our-team">
+            <div class="container">
+              <div class="row team-item gtco-team-reverse">
+                <div class="col-md-6 col-md-push-7 animate-box" data-animate-effect="fadeInRight">
+                  <div class="">
+                      <object>
+                        <param name="autostart" value="true" />  
+                        <embed src=../movies/BDE-WEI.mp4 type="video/mp4" width=640 height=360 loop=true>
+                      </object>
+                  </div>
+                </div>
+                <div class="col-md-6  col-md-pull-6 animate-box" data-animate-effect="fadeInRight">
+                  <h2>BDE</h2>
+                  <p>Du parrainage des étudiants aux soirées Montpelliéraines sa mission est de rassebler lees étudiants et faire en sorte que ces années au sein de l'école soit les plus agréables.</p>
+                  <p><a href="http://bdemontpellier.epsi.fr" target="_blank" class="read-more">En savoir plus <i class="icon-chevron-right"></i></a></p>
+                </div>
+              </div>
+            </div>
+          </section>       
+      </div>
+      
+      <div id="mydil" class="tabcontent"><br>
+        <section id="gtco-our-team" data-section="our-team">
+            <div class="container">
+              <div class="row team-item gtco-team">
+                  <div class="col-md-6 col-md-pull-1 animate-box"  data-animate-effect="fadeInLeft">
+                    <div class="img-shadow">
+                      <img src="../images/mydil.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by GetTemplates.co">
+                    </div>
+                  </div>
+                  <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                    <h2>My DIL</h2>
+                    <p>Un lieu où le savoir à la demande est à la portée de tous nos élèves et où le matériel modulable et high-tech est mis au service de l’expérimentation pédagogique.
 
-	<section id="gtco-practice-areas" data-section="practice-areas">
-		<div class="container">
-			<div class="row row-pb-md">
-				<div class="col-md-8 col-md-offset-2 heading animate-box" data-animate-effect="fadeIn">
-          <img src="../images/logo_BDE.jpg" alt="Free HTML5 Bootstrap Template by GetTemplates.co">
-					<p class="sub"></p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<div class="gtco-practice-area-item animate-box">
-						<div class="gtco-icon">
-                <i class="icon-facebook" style="width:50px;"></i>
-						</div>
-						<div class="gtco-copy">
-							<h3>Parrainage</h3>
-							<p></p>
-						</div>
-					</div>
+                      Échanger, développer, accélérer, co-construire, favoriser l’émergence de projets innovants par un lieu de collaboration et de confrontation unique entre étudiants :
+                      
+                      Espace, laboratoire dédié au codage, à l’innovation technologique.</p>
+                      <p><a href="http://www.epsi.fr" target="_blank" class="read-more">En savoir plus <i class="icon-chevron-right"></i></a></p>
+                    </div>
+                </div>
+          </section>        
+      </div>
+       
+      <div id="suaps" class="tabcontent"><br>
+        <section id="gtco-our-team" data-section="our-team">
+            <div class="container">
+              <div class="row team-item gtco-team-reverse">
+                <div class="col-md-6 col-md-push-7 animate-box" data-animate-effect="fadeInRight">
+                  <div class="img-shadow">
+                    <img src="../images/suaps.png" class="img-responsive" alt="Free HTML5 Bootstrap Template by GetTemplates.co">
+                  </div>
+                </div>
+                <div class="col-md-6  col-md-pull-6 animate-box" data-animate-effect="fadeInRight">
+                  <h2>Vous souhaitez pratiquer une activité sportive ?</h2>
+                  <p>Le Service Commun des Activités Physiques et Sportives assure pour l’ensemble des étudiants et des personnels, l’organisation, l’enseignement et l’animation des activités physiques et sportives de l’Université de Montpellier ainsi que l’utilisation des installations.</p>
+                  <p>L'inscription se fait directement aux heures d'ouvertures du bureau SUAPS de Montpellier</p>
+                  <p><a href="http://suaps.edu.umontpellier.fr/" target="_blank" class="read-more">En savoir plus <i class="icon-chevron-right"></i></a></p>
+                </div>
+              </div>
+        
+            </div>
+          </section>   
+      </div>
+          </section>
 
-					<div class="gtco-practice-area-item animate-box">
-						<div class="gtco-icon">
-							<img src="images/scale.png" alt="Free HTML5 Bootstrap Template by GetTemplates.co">
-						</div>
-						<div class="gtco-copy">
-							<h3>Industrial Law</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed scelerisque sapien. Sed sodales, libero non faucibus rutrum, purus tellus finibus diam, eget ornare tortor leo eget erat. </p>
-						</div>
-					</div>
+        <div class="test">
+            
+            <script>
+              viewer = new PANOLENS.Viewer({
+                container: this,		// A DOM Element container
+                controlBar: true, 			// Vsibility of bottom control bar
+                controlButtons: [],			// Buttons array in the control bar. Default to ['fullscreen', 'setting', 'video']
+                autoHideControlBar: false,		// Auto hide control bar
+                autoHideInfospot: true,			// Auto hide infospots
+                horizontalView: false,			// Allow only horizontal camera control
+                cameraFov: 60,				// Camera field of view in degree
+                reverseDragging: false,			// Reverse orbit control direction
+                enableReticle: false,			// Enable reticle for mouseless interaction
+                dwellTime: 1500,			// Dwell time for reticle selection in millisecond
+                autoReticleSelect: true,		// Auto select a clickable target after dwellTime
+                viewIndicator: false,			// Adds an angle view indicator in upper left corner
+                indicatorSize: 30,			// Size of View Indicator
+                output: 'console'			// Whether and where to output infospot position. Could be 'console' or 'overlay'
+              });
 
-					<div class="gtco-practice-area-item animate-box">
-						<div class="gtco-icon">
-							<img src="images/scale.png" alt="Free HTML5 Bootstrap Template by GetTemplates.co">
-						</div>
-						<div class="gtco-copy">
-							<h3>Financial Law</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed scelerisque sapien. Sed sodales, libero non faucibus rutrum, purus tellus finibus diam, eget ornare tortor leo eget erat. </p>
-						</div>
-					</div>
 
-				</div>
-				<div class="col-md-6">
+                var panorama, viewer;
+                panorama = new PANOLENS.ImagePanorama( '../images/test2.jpg' );
+                viewer = new PANOLENS.Viewer();
+                viewer.add( panorama );
+              </script>
 
-					<div class="gtco-practice-area-item animate-box">
-						<div class="gtco-icon">
-							<img src="images/scale.png" alt="Free HTML5 Bootstrap Template by GetTemplates.co">
-						</div>
-						<div class="gtco-copy">
-							<h3>Divorce Law</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed scelerisque sapien. Sed sodales, libero non faucibus rutrum, purus tellus finibus diam, eget ornare tortor leo eget erat. </p>
-						</div>
-					</div>
+        </div>
 
-					<div class="gtco-practice-area-item animate-box">
-						<div class="gtco-icon">
-							<img src="images/scale.png" alt="Free HTML5 Bootstrap Template by GetTemplates.co">
-						</div>
-						<div class="gtco-copy">
-							<h3>Corporate Law</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed scelerisque sapien. Sed sodales, libero non faucibus rutrum, purus tellus finibus diam, eget ornare tortor leo eget erat. </p>
-						</div>
-					</div>
-
-					<div class="gtco-practice-area-item animate-box">
-						<div class="gtco-icon">
-							<img src="images/scale.png" alt="Free HTML5 Bootstrap Template by GetTemplates.co">
-						</div>
-						<div class="gtco-copy">
-							<h3>Accident Law</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed scelerisque sapien. Sed sodales, libero non faucibus rutrum, purus tellus finibus diam, eget ornare tortor leo eget erat. </p>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section id="gtco-our-team" data-section="our-team">
-		<div class="container">
-			<div class="row row-pb-md">
-				<div class="col-md-8 col-md-offset-2 heading animate-box" data-animate-effect="fadeIn">
-					<h1>BDE EPSI</h1>
-					<p class="sub"></p>
-				</div>
-			</div>
-			<div class="row team-item gtco-team-reverse">
-				<div class="col-md-6 col-md-push-7 animate-box" data-animate-effect="fadeInRight">
-					<div class="img-shadow">
-						<img src="images/img_team_1.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by GetTemplates.co">
-					</div>
-				</div>
-				<div class="col-md-6  col-md-pull-6 animate-box" data-animate-effect="fadeInRight">
-					<h2>Jeff Finley</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus aliquid maiores, voluptatum ex. Accusantium, eum distinctio laudantium. Perferendis dolor, corporis quasi? Tempore quod molestiae quis cumque pariatur dolore vel sit, fugit delectus quasi reprehenderit officia voluptate incidunt, culpa odit impedit qui dolorum fugiat. Quidem possimus reprehenderit, quae recusandae voluptatibus magnam!</p>
-					<p>Ratione facilis quod laborum eaque illo dolore blanditiis nobis dicta voluptatem fugit optio, eveniet non dolor quia delectus, sint, dignissimos atque porro consequuntur unde. Soluta ex necessitatibus delectus saepe aliquam, culpa officiis doloremque, ipsa facere hic, voluptatem accusantium veniam, quasi! Explicabo accusantium sint, corporis consequuntur fugit ipsam, dolorum excepturi adipisci.</p>
-				</div>
-			</div>
-
-			<div class="row team-item gtco-team">
-				<div class="col-md-6 col-md-pull-1 animate-box"  data-animate-effect="fadeInLeft">
-					<div class="img-shadow">
-						<img src="images/img_team_2.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by GetTemplates.co">
-					</div>
-				</div>
-				<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-					<h2>Craig Campbell</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus aliquid maiores, voluptatum ex. Accusantium, eum distinctio laudantium. Perferendis dolor, corporis quasi? Tempore quod molestiae quis cumque pariatur dolore vel sit, fugit delectus quasi reprehenderit officia voluptate incidunt, culpa odit impedit qui dolorum fugiat. Quidem possimus reprehenderit, quae recusandae voluptatibus magnam!</p>
-					<p>Ratione facilis quod laborum eaque illo dolore blanditiis nobis dicta voluptatem fugit optio, eveniet non dolor quia delectus, sint, dignissimos atque porro consequuntur unde. Soluta ex necessitatibus delectus saepe aliquam, culpa officiis doloremque, ipsa facere hic, voluptatem accusantium veniam, quasi! Explicabo accusantium sint, corporis consequuntur fugit ipsam, dolorum excepturi adipisci.</p>
-				</div>
-			</div>
-
-		</div>
-	</section>
+          <script>
+          var acc = document.getElementsByClassName("accordion");
+          var i;
+          
+          for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+              this.classList.toggle("active");
+              var panel = this.nextElementSibling;
+              if (panel.style.maxHeight){
+                panel.style.maxHeight = null;
+              } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+              } 
+            });
+          }
+          </script>
+          
 
 	<footer id="gtco-footer" role="contentinfo">
       <div class="container">
@@ -278,5 +593,30 @@
 	<!-- Main -->
 	<script src="../js/main.js"></script>
 
+
+  <script>
+      function openCity(evt, cityName) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+      
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+      }
+   
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+   
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+  }
+
+  window.onload = openCity(event, 'loger');
+  </script>
 	</body>
 </html>
