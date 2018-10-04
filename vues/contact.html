@@ -1,10 +1,380 @@
-<!DOCTYPE html>
-<html lang="fr" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    contact
-  </body>
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> Plateau Cacao </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by gettemplates.co" />
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="gettemplates.co" />
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400, 900" rel="stylesheet"> -->
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="../css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="../css/icomoon.css">
+	<!-- Themify Icons-->
+	<link rel="stylesheet" href="../css/themify-icons.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="../css/magnific-popup.css">
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="../css/owl.carousel.min.css">
+	<link rel="stylesheet" href="../css/owl.theme.default.min.css">
+	<!-- Flexslider -->
+	<link rel="stylesheet" href="../css/flexslider.css">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="../css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="../js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+    <style>.gtco-nav {
+        position: fixed;
+        top: 0;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        padding: 20px 0;
+        z-index: 1001;
+        background: #fff;
+        webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+      }
+      @media screen and (max-width: 768px) {
+        .gtco-nav {
+          padding: 20px 0;
+        }
+      }
+      .gtco-nav #gtco-logo {
+        font-size: 30px;
+        line-height: 1;
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+      }
+      .gtco-nav #gtco-logo em {
+        color: #fff;
+        font-weight: 100;
+        font-style: normal;
+        -webkit-transition: 0.2s;
+        -o-transition: 0.2s;
+        transition: 0.2s;
+      }
+      .gtco-nav #gtco-logo a {
+        padding: 0px 10px;
+        color: #fff;
+        font-weight: 700;
+        -webkit-transition: 0.4s;
+        -o-transition: 0.4s;
+        transition: 0.4s;
+      }
+      @media screen and (max-width: 768px) {
+        .gtco-nav .menu-1, .gtco-nav .menu-2 {
+          display: none;
+        }
+      }
+      .gtco-nav ul {
+        padding: 0;
+        margin: 1px 0 0 0;
+      }
+      .gtco-nav ul li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: inline;
+      }
+      .gtco-nav ul li a {
+         
+        font-size: 12px;
+        padding: 30px 10px;
+        text-transform: uppercase;
+        color: rgba(0, 0, 0, 0.5);
+        font-weight: 400 !important;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
+        transition: 0.5s;
+      }
+      .gtco-nav ul li a:hover, .gtco-nav ul li a:focus, .gtco-nav ul li a:active {
+        color: #000000;
+      }
+      .gtco-nav ul li.has-dropdown {
+        position: relative;
+      }
+      .gtco-nav ul li.has-dropdown .dropdown {
+        width: 130px;
+        -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+        z-index: 1002;
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        text-align: left;
+        background: #fff;
+        padding: 20px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        border-radius: 4px;
+        -webkit-transition: 0s;
+        -o-transition: 0s;
+        transition: 0s;
+      }
+      .gtco-nav ul li.has-dropdown .dropdown:before {
+        bottom: 100%;
+        left: 40px;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-bottom-color: #fff;
+        border-width: 8px;
+        margin-left: -8px;
+      }
+      .gtco-nav ul li.has-dropdown .dropdown li {
+        display: block;
+        margin-bottom: 7px;
+      }
+      .gtco-nav ul li.has-dropdown .dropdown li:last-child {
+        margin-bottom: 0;
+      }
+      .gtco-nav ul li.has-dropdown .dropdown li a {
+        padding: 2px 0;
+        display: block;
+        color: #999999;
+        line-height: 1.2;
+        text-transform: none;
+        font-size: 15px;
+      }
+      .gtco-nav ul li.has-dropdown .dropdown li a:hover {
+        color: #000;
+      }
+      .gtco-nav ul li.has-dropdown .dropdown li.active > a {
+        color: #000 !important;
+      }
+      .gtco-nav ul li.has-dropdown:hover a, .gtco-nav ul li.has-dropdown:focus a {
+        color: #fff;
+      }
+      .gtco-nav ul li.btn-cta a {
+        color: #fff;
+      }
+      .gtco-nav ul li.btn-cta a span {
+        border: none !important;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 4px 20px;
+        display: -moz-inline-stack;
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+        background: #F9D055;
+        color: #fff;
+        border-radius: 30px;
+      }
+       
+      .gtco-nav ul li.active > a {
+        color: #fff !important;
+      }
+      .gtco-nav.scrolled {
+        background: #fff;
+        webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+      }
+      .gtco-nav.scrolled ul {
+        padding: 0;
+        margin: 1px 0 0 0;
+      }
+      .gtco-nav.scrolled ul li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: inline;
+      }
+      .gtco-nav.scrolled ul li a {
+        color: rgba(0, 0, 0, 0.5);
+      }
+       
+      .gtco-nav.scrolled ul li.active > a {
+        color: #f9d055 !important;
+      }
+      .gtco-nav.scrolled ul li.btn-cta a {
+        color: #fff;
+      }
+      .gtco-nav.scrolled ul li.btn-cta a span {
+        border: none !important;
+        background: #f9d055;
+        padding: 4px 20px;    
+      }
+                 
+      .gtco-nav.scrolled #gtco-logo em, .gtco-nav.scrolled #gtco-logo a {
+        color: #000;
+      }</style>
+	</head>
+	<body>
+
+	<div class="gtco-loader"></div>
+
+	<div id="page">
+	<nav class="gtco-nav" role="navigation">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-2 col-xs-12">
+					<div id="gtco-logo"><a href="../index.html"><img src="../images/logo.png" style="height:50px;"/></a></div>
+				</div>
+				<div class="col-xs-10 text-right">
+					<ul>
+						<li><a href="../index.html" data-nav-section="accueil">Accueil</a></li>
+						<li><a href="../vues/vieEtudiante.html">Vie étudiante</a></li>
+						<li><a href="../vues/visite.html" data-nav-section="visite">Visite</a></li>
+						<li><a href="../vues/formations.html" data-nav-section="formations">Formations</a></li>
+						<li class="btn-cta"><a href="../vues/contact.html" data-nav-section="contact"><span>Contact</span></a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</nav>
+
+  <br> <br> <br> <br> <br> <br>
+  <section id="#gtco-about-localiser" data-section="about">
+      <div class="container">
+        <div class="row row-pb-md">
+          <div class="col-md-8 col-md-offset-2 heading animate-box" data-animate-effect="fadeIn">
+					<h1>Nous contacter</h1>
+					<p class="sub">Vous avez une question ? une demande d'information ? Vous êtes sur la bonne page.</p>
+        </div>            
+        <div class="col-md-8 col-md-offset-2 heading animate-box">
+            <h3>Les questions les plus posées</h3>  
+            <br>
+            <h4>Q : Quel est le titre à la fin de la formation ?</h4>
+            <p>R : Cela dépend de l'orientation mais les titres sont des RNCP de niveau 1,2 ou 3. </p>
+            <h4>Q : Quel métier puis-je obtenir à la fin de la formation ?</h4>
+            <p>R : Pour EPSI, vous pouvez postuler à des postes en tant qu'Administrateur & Supervision d'infrastructure ou en tant que Développeur d'applications informatiques</p>
+            <h4>Q : Combien de temps dure la formation ?</h4>
+            <p>R : Tout dépend du titre que vous visez. Mais la formation totale dure 5 ans.</p>
+            <h4>Q : L'alternance est-elle possible ?</h4>
+            <p>R : Oui, mais ce n'est disponible qu'à partir de la 3ème année.</p>
+            <h4>Q : Avons-nous besoin d'un ordinateur personnel ?</h4>
+            <p>R : Oui, cela est obligatoire mais des ordinateurs sont disponible en cas d'oubli ou panne.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="#gtco-about-localiser" data-section="about">
+      <div class="container">
+        <div class="row row-pb-md">
+        <div class="col-md-8 col-md-offset-2 heading animate-box">
+            <div>
+                <h2 class="heading-colored" style="color:black">Nous localiser dans Montpellier</h2>
+                <p class="sub"></p>
+                <p>Capitale Régionale du Languedoc Roussillon, Montpellier séduit par la douceur de son climat, les charmes de son architecture et sa vie culturelle très dense. C’est aussi un vivier de start-up et d’acteurs du numérique qui en font une ville connectée dynamique. le campus de Montpellier se compose de : 
+                    <ul>
+                    <li>2500 m² répartis sur deux bâtiments</li>
+                    <li>Salles équipées de tables connectées</li>
+                    <li>Laboratoire MyDil</li>
+                    <li>Laboratoire Réseaux</li>
+                    <li>Espace de détente et de restauration</li>
+                    <li>Espace co-working</li>
+                    <li>Food truck tous les midis sur la partie campus</li>
+                    </ul>
+                    <br>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1443.6284828765909!2d3.837972806137953!3d43.642821795135454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x883bcb39fbb35b3b!2sEPSI+Montpellier!5e0!3m2!1sfr!2sfr!4v1538473432859" width="800" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+              </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="#gtco-about-localiser" data-section="about">
+      <div class="container">
+        <div class="row row-pb-md">
+          <div class="col-md-8 col-md-offset-2 heading animate-box" data-animate-effect="fadeIn">
+					<h2>Les moyens de nous contacter</h2>
+          <p class="sub"></p>
+          <p>Ci-dessous vous retrouverez tous les moyens de nous contacter pour des questions, des renseignements ou encore des rendez-vous.</p>                    
+        </div>            
+        <div class="col-md-8 col-md-offset-2 heading animate-box">
+            <h4>Email</h4>
+            <p>info@montpellier-epsi.fr</p>
+            <h4>Numéro de téléphone</h4>
+            <p>04.67.04.20.01</p>
+            <h4>Adresse de l'EPSI Montpellier</h4>
+            <p>437 avenue des Apothicaires, 34090 Montpellier</p>
+            <br>
+            <img src="../images/Carte-FCR.png">
+        </div>
+      </div>
+    </div>
+  </section>
+
+	<footer id="gtco-footer" role="contentinfo">
+		<div class="container">
+
+			<div class="row copyright">
+				<div class="col-md-12">
+					<p class="pull-left">
+						<small class="block">&copy; 2018. All Rights Reserved.</small>
+						<small class="block">Designed by Plateau Cacao. <a href="http://www.epsi.fr/mentions-legales/" target="_blank">Mentions légales</a></small>
+					</p>
+					<p class="pull-right">
+						<ul class="gtco-social-icons pull-right">
+							<li><a href="https://www.facebook.com/ecole.EPSI/" target="_blank"><i class="icon-facebook"></i></a></li>
+							<li><a href="https://www.linkedin.com/school/epsi_2/?originalSubdomain=fr" target="_blank"><i class="icon-linkedin"></i></a></li>
+							<li><a href="https://www.instagram.com/wis.montpellier/?hl=fr" target="_blank"><i class="icon-instagram"></i></a></li>
+						</ul>
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+
+	<!-- jQuery -->
+	<script src="../js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="../js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="../js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="../js/jquery.waypoints.min.js"></script>
+	<!-- Stellar -->
+	<script src="../js/jquery.stellar.min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="../js/jquery.magnific-popup.min.js"></script>
+	<script src="../js/magnific-popup-options.js"></script>
+	<!-- Main -->
+	<script src="../js/main.js"></script>
+
+	</body>
 </html>
