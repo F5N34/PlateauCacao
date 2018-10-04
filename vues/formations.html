@@ -1,10 +1,787 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    formations
-  </body>
-</html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> Plateau Cacao </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by gettemplates.co" />
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="gettemplates.co" />
+    
+    <!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+    
+	<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400, 900" rel="stylesheet"> -->
+    
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="../css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="../css/icomoon.css">
+	<!-- Themify Icons-->
+	<link rel="stylesheet" href="../css/themify-icons.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="../css/magnific-popup.css">
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="../css/owl.carousel.min.css">
+	<link rel="stylesheet" href="../css/owl.theme.default.min.css">
+	<!-- Flexslider -->
+	<link rel="stylesheet" href="../css/flexslider.css">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="../css/style.css">
+    
+	<!-- Modernizr JS -->
+	<script src="../js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+        
+        <style>
+            h4 {
+                color: #271549;
+            }
+            .tab {
+                overflow: hidden;
+                background-color: #38B8D7;
+                color: white;
+            }
+            
+            /* Style the buttons that are used to open the tab content */
+            .tab button {
+                background-color: inherit;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                transition: 0.3s;
+            }
+            
+            /* Change background color of buttons on hover */
+            .tab button:hover {
+                background-color: #f9d055;
+            }
+            
+            /* Create an active/current tablink class */
+            .tab button.active {
+                background-color: #f9d055;
+            }
+            
+            /* Style the tab content */
+            .tabcontent {
+                display: none;
+                padding: 6px 12px;
+                border-top: none;
+            }
+
+            /* NAV */
+            .gtco-nav {
+  position: fixed;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 1001;
+  background: #fff;
+  webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+}
+@media screen and (max-width: 768px) {
+  .gtco-nav {
+    padding: 20px 0;
+  }
+}
+.gtco-nav #gtco-logo {
+  font-size: 30px;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+.gtco-nav #gtco-logo em {
+  color: #fff;
+  font-weight: 100;
+  font-style: normal;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+.gtco-nav #gtco-logo a {
+  padding: 0px 10px;
+  color: #fff;
+  font-weight: 700;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+@media screen and (max-width: 768px) {
+  .gtco-nav .menu-1, .gtco-nav .menu-2 {
+    display: none;
+  }
+}
+.gtco-nav ul {
+  padding: 0;
+  margin: 1px 0 0 0;
+}
+.gtco-nav ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: inline;
+}
+.gtco-nav ul li a {
+   
+  font-size: 12px;
+  padding: 30px 10px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 400 !important;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.gtco-nav ul li a:hover, .gtco-nav ul li a:focus, .gtco-nav ul li a:active {
+  color: #000000;
+}
+.gtco-nav ul li.has-dropdown {
+  position: relative;
+}
+.gtco-nav ul li.has-dropdown .dropdown {
+  width: 130px;
+  -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+  z-index: 1002;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  text-align: left;
+  background: #fff;
+  padding: 20px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-transition: 0s;
+  -o-transition: 0s;
+  transition: 0s;
+}
+.gtco-nav ul li.has-dropdown .dropdown:before {
+  bottom: 100%;
+  left: 40px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-bottom-color: #fff;
+  border-width: 8px;
+  margin-left: -8px;
+}
+.gtco-nav ul li.has-dropdown .dropdown li {
+  display: block;
+  margin-bottom: 7px;
+}
+.gtco-nav ul li.has-dropdown .dropdown li:last-child {
+  margin-bottom: 0;
+}
+.gtco-nav ul li.has-dropdown .dropdown li a {
+  padding: 2px 0;
+  display: block;
+  color: #999999;
+  line-height: 1.2;
+  text-transform: none;
+  font-size: 15px;
+}
+.gtco-nav ul li.has-dropdown .dropdown li a:hover {
+  color: #000;
+}
+.gtco-nav ul li.has-dropdown .dropdown li.active > a {
+  color: #000 !important;
+}
+.gtco-nav ul li.has-dropdown:hover a, .gtco-nav ul li.has-dropdown:focus a {
+  color: #fff;
+}
+.gtco-nav ul li.btn-cta a {
+  color: #fff;
+}
+.gtco-nav ul li.btn-cta a span {
+  border: none !important;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 20px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  background: #F9D055;
+  color: #fff;
+  border-radius: 30px;
+}
+ 
+.gtco-nav ul li.active > a {
+  color: #fff !important;
+}
+.gtco-nav.scrolled {
+  background: #fff;
+  webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+}
+.gtco-nav.scrolled ul {
+  padding: 0;
+  margin: 1px 0 0 0;
+}
+.gtco-nav.scrolled ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: inline;
+}
+.gtco-nav.scrolled ul li a {
+  color: rgba(0, 0, 0, 0.5);
+}
+ 
+.gtco-nav.scrolled ul li.active > a {
+  color: #f9d055 !important;
+}
+.gtco-nav.scrolled ul li.btn-cta a {
+  color: #fff;
+}
+.gtco-nav.scrolled ul li.btn-cta a span {
+  border: none !important;
+  background: #f9d055;
+  padding: 4px 20px;    
+}
+           
+.gtco-nav.scrolled #gtco-logo em, .gtco-nav.scrolled #gtco-logo a {
+  color: #000;
+}
+        </style>
+	</head>
+	<body>
+        
+        <div class="gtco-loader"></div>
+        
+        <div id="page">
+            <nav class="gtco-nav" role="navigation">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-12">
+                            <div id="gtco-logo"><a href="../index.html"><img src="../images/logo.png" style="height:50px;"/></a></div>
+                        </div>
+                        <div class="col-xs-10 text-right">
+                            <ul>
+                                <li><a href="../index.html" data-nav-section="accueil">Accueil</a></li>
+                                <li><a href="vieEtudiante.html">Vie étudiante</a></li>
+                                <li><a href="visite.html" data-nav-section="visite">Visite</a></li>
+                                <li><a href="formations.html" data-nav-section="formations">Formations</a></li>
+                                <li class="btn-cta"><a href="contact.html" data-nav-section="contact"><span>Contact</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </nav>
+            
+            <section id="gtco-about" data-section="about">
+                <div class="container">
+                <div class="tab">
+                    <button id="epsilk" class="tablinks" onclick="openCity(event, 'epsi')" style="width: 50%">EPSI</button>
+                    <button id="wislk" class="tablinks" onclick="openCity(event, 'wis')" style="width: 50%">WIS</button>
+                </div>
+                    <div id="epsitab" class="tab">
+                        <button class="tablinks active" onclick="openCity(event, 'bach1')" style="width: 20%">BACHELOR 1</button>
+                        <button class="tablinks" onclick="openCity(event, 'bach2')" style="width: 20%">BACHELOR 2</button>
+                        <button class="tablinks" onclick="openCity(event, 'bach3')" style="width: 20%">BACHELOR 3</button>
+                        <button class="tablinks" onclick="openCity(event, 'master1')" style="width: 20%">INGENIERIE 4</button>
+                        <button class="tablinks" onclick="openCity(event, 'master2')" style="width: 20%">INGENIERIE 5</button>
+                    </div>
+                    
+                    <!-- Tab content -->
+                    <div id="bach1" class="tabcontent"><br>
+                        <h4>Développement d'applications informatiques</h4>
+                        <ul>
+                            <li>Apprendre à développer (algorithmique)</li>
+                            <li>Langages de développement : C, C++</li>
+                            <li>Langages de développement web : PHP, HTML, CSS, MySQL</li>
+                        </ul><br>
+                        <h4>Administration infrastructure système et réseau gestion des données</h4>
+                        <ul>
+                            <li>Environnements systèmes : Windows, Linux</li>
+                            <li>Réseaux et topologies</li>
+                            <li>IPV4 et IPV6</li>
+                        </ul><br>
+                        <h4>Gestion des données</h4>
+                        <ul>
+                            <li>Environnement économique et juridique</li>
+                            <li>Mathématiques</li>
+                            <li>Anglais</li>
+                            <li>Techniques d'expression et communication</li>
+                            <li>Modélisation de bases de données : Merise, UML</li>
+                            <li>Conception et adaptation d'une base de données : SQL Server</li>
+                        </ul><br>
+                        <h4>Méthodes et projets</h4>
+                        <ul>
+                            <li>Environnement économique et juridique</li>
+                            <li>Mathématiques pour l'informatique</li>
+                        </ul><br>
+                        <h4>Communication</h4>
+                        <ul>
+                            <li>Anglais</li>
+                            <li>Techniques d'expression et communication</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="bach2" class="tabcontent"><br>
+                        <h4>Développement d'applications informatiques</h4>
+                        <ul>
+                            <li>Langages de développement objet et tests unitaires : C++, C#</li>
+                            <li>Conception d'IHM web et nomade : PHP Symfony, JavaScript, jQuery, UX Design...</li>
+                        </ul><br>
+                        <h4>Administration infrastructure système et réseau gestion des données</h4>
+                        <ul>
+                            <li>Administration réseau : gestion des accès, supervision...</li>
+                            <li>Administration systèmes : Shell Linux, Active Directory</li>
+                        </ul><br>
+                        <h4>Gestion des données</h4>
+                        <ul>
+                            <li>Administration des données : SQL Server</li>
+                        </ul><br>
+                        <h4>Méthodes et projets</h4>
+                        <ul>
+                            <li>Environnement économique et juridique</li>
+                            <li>Projet SI et recherche opérationnelle : UML, RO</li>
+                        </ul><br>
+                        <h4>Communication</h4>
+                        <ul>
+                            <li>Anglais</li>
+                            <li>Techniques d'expression et communication</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="bach3" class="tabcontent"><br>
+                        <h4>Développement d'applications informatiques</h4>
+                        <ul>
+                            <li>Développement environnement objet : Java, JEE</li>
+                            <li>Intégration continue Java et Jenkins</li>
+                        </ul><br>
+                        <h4>Administration infrastructure système et réseau gestion des données</h4>
+                        <ul>
+                            <li>IP, technologie et service réseau sans fil</li>
+                            <li>Administration sous Windows</li>
+                            <li>Sécurité système et réseaux</li>
+                        </ul><br>
+                        <h4>Gestion des données</h4>
+                        <ul>
+                            <li>Conception et exploitation d'une base de données : SGBD Oracle</li>
+                            <li>Administration d'une base de données</li>
+                        </ul><br>
+                        <h4>Méthodes et projets</h4>
+                        <ul>
+                            <li>Projet SI et recherche opérationnelle : UML, gestion de projet via ITIL et RO</li>
+                            <li>Environnement juridique et financier</li>
+                        </ul><br>
+                        <h4>Communication</h4>
+                        <ul>
+                            <li>Anglais</li>
+                            <li>Techniques d'expression et communication</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Tab content -->
+                    <div id="master1" class="tabcontent"><br>
+                        <h4>Fonction d'encadrement</h4>
+                        <ul>
+                            <li>Stratégie financière</li>
+                            <li>Anglais</li>
+                            <li>Techniques d'expression et communication</li>
+                        </ul><br>
+                        <h4>Méthodes et projets</h4>
+                        <ul>
+                            <li>Méthodes Agiles</li>
+                            <li>Mathématiques et recherche opérationnelle</li>
+                            <li>Planification et suivi de projets</li>
+                        </ul><br>
+                        <h4>Gestion de données & Business Intelligence</h4>
+                        <ul>
+                            <li>Modélisation décisionnelle</li>
+                            <li>NoSQL</li>
+                        </ul><br>
+                        <h4>Études & développement</h4>
+                        <ul>
+                            <li>Mobilité et systèmes embarqués</li>
+                            <li>Intelligence artificielle</li>
+                        </ul><br>
+                        <h4>infrastructure systèmes & réseaux</h4>
+                        <ul>
+                            <li>Virtualisation et cloud computing</li>
+                            <li>Sécurité infrastructure</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="master2" class="tabcontent"><br>
+                        <h4>Fonction d'encadrement</h4>
+                        <ul>
+                            <li>Management des systèmes d'information</li>
+                            <li>Management des ressources</li>
+                            <li>Anglais</li>
+                        </ul><br>
+                        <h4>Méthodes & projets</h4>
+                        <ul>
+                            <li>Management des projets</li>
+                        </ul><br>
+                        <h4>Gestion des données & Business Intelligence</h4>
+                        <ul>
+                            <li>Qualité des données</li>
+                        </ul>
+                    </div>
+
+                <!-- WIS -->
+                <div id="wistab" class="tab" style="display: none;">
+                        <button class="tablinks active" onclick="openCity(event, 'wis1')" style="width: 20%">BACHELOR 1</button>
+                        <button class="tablinks" onclick="openCity(event, 'wis2')" style="width: 20%">BACHELOR 2</button>
+                        <button class="tablinks" onclick="openCity(event, 'wis3')" style="width: 20%">BACHELOR 3</button>
+                        <button class="tablinks" onclick="openCity(event, 'wis4')" style="width: 20%">EXPERTISE 4</button>
+                        <button class="tablinks" onclick="openCity(event, 'wis5')" style="width: 20%">EXPERTISE 5</button>
+                    </div>
+                    
+                    <!-- Tab content -->
+                    <div id="wis1" class="tabcontent"><br>
+                        <h4>Conception & Intégration d'applications web & mobiles</h4>
+                        <ul>
+                            <li>Développement front-end web</li>
+                            <li>Serveur web & pilotage page web</li>
+                        </ul><br>
+                        <h4>Communication digitale & stratégie relation clients</h4>
+                        <ul>
+                            <li>Communication digitale & réseaux sociaux</li>
+                            <li>Création et gestion de contenus</li>
+                            <li>Relation cients</li>
+                        </ul><br>
+                        <h4>Marketing digital & analyse de données</h4>
+                        <ul>
+                            <li>Marketing & référencement</li>
+                            <li>Gestion de données</li>
+                        </ul><br>
+                        <h4>Méthodes & projets</h4>
+                        <ul>
+                            <li>Environnement économique et juridique</li>
+                            <li>Anglais & communication</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="wis2" class="tabcontent"><br>
+                        <h4>Conception & Intégration d'applications web & mobiles</h4>
+                        <ul>
+                            <li>Développement front-end web</li>
+                            <li>Administration système web</li>
+                        </ul><br>
+                        <h4>Communication digitale & stratégie relation clients</h4>
+                        <ul>
+                            <li>Création et gestion de contenus</li>
+                            <li>Stratégie digitale relation cients</li>
+                        </ul><br>
+                        <h4>Marketing digital & analyse de données</h4>
+                        <ul>
+                            <li>Marketing digital web et mobile</li>
+                            <li>Gestion de données & bases de données</li>
+                        </ul><br>
+                        <h4>Méthodes & projets</h4>
+                        <ul>
+                            <li>Environnement juridique et gestion de projet</li>
+                            <li>Anglais & communication</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="wis3" class="tabcontent"><br>
+                        <h4>Conception & Intégration d'applications web & mobiles</h4>
+                        <ul>
+                            <li>Développement front-end et back end web & mobile</li>
+                            <li>Cloud web & sécurité</li>
+                        </ul><br>
+                        <h4>Stratégie et digital business</h4>
+                        <ul>
+                            <li>Business & management de projet</li>
+                            <li>Stratégie digitale</li>
+                            <li>Communication & techniques d'expression</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Tab content -->
+                    <div id="wis4" class="tabcontent"><br>
+                        <h4>Stratégie digitale & management</h4>
+                        <ul>
+                            <li>Stratégie management d'entreprise
+                                <ul>
+                                    <li>Approche stratégique</li>
+                                    <li>Mise en oeuvre de la stratégie de l'entreprise</li>
+                                </ul>
+                            </li><br>
+                            <li>Stratégie digitale & système d'information
+                                <ul>
+                                    <li>Gouvernance et performannce d'un SI</li>
+                                    <li>Sécurité de l'information et des échanges</li>
+                                    <li>Management & transformation digitale</li>
+                                </ul>
+                            </li><br>
+                            <li>Stratégie financière
+                                <ul>
+                                    <li>Diagnostic financier</li>
+                                    <li>Choix des investissements</li>
+                                    <li>Politique financière</li>
+                                </ul>
+                            </li><br>
+                            <li>Contrôle et gestion des risques de l'entreprise
+                                <ul>
+                                    <li>Intro Audit et analyse des risques</li>
+                                    <li>Contrôle de gestion</li>
+                                </ul>
+                            </li>
+                        </ul><br>
+                        <h4>Innovation digitale & optimisation des processus métier</h4>
+                        <ul>
+                            <li>Analyse & optimisation des processus
+                                <ul>
+                                    <li>Architecture processus métier</li>
+                                    <li>Lean Management : amélioration des flux via le digital</li>
+                                </ul>
+                            </li><br>
+                            <li>Marketing digital & optimisation expérience client
+                                <ul>
+                                    <li>Diagnostic marketing</li>
+                                    <li>Stratégie commerciale & marketing</li>
+                                    <li>Digitaliser et piloter une nouvelle expérience client</li>
+                                    <li>Commerce connecté & Digital Retail</li>
+                                </ul>
+                            </li>
+                        </ul><br>
+                        <h4>Performance & analyse des données digitales</h4>
+                        <ul>
+                            <li>Big Data & Digital
+                                <ul>
+                                    <li>Conception et exploitation d'une base de données relationnelle</li>
+                                    <li>Datamining & fouille de données : concepts et techniques</li>
+                                    <li>Qualité des données environnement digital</li>
+                                </ul>
+                            </li><br>
+                            <li>Analyse des données digitales
+                                <ul>
+                                    <li>Collecte de données digitales web et mobile</li>
+                                    <li>Data Driven marketing</li>
+                                </ul>
+                            </li>
+                        </ul><br>
+                        <h4>Management de projet digital & accompagnement au changement</h4>
+                        <ul>
+                            <li>Pilotage de projet
+                                <ul>
+                                    <li>Méthodes Agiles</li>
+                                    <li>Pilotage d'un projet numérique</li>
+                                </ul>
+                            </li><br>
+                            <li>Management des ressources humaines
+                                <ul>
+                                    <li>Fonction RH : de la digitalisation à la RH augmentée</li>
+                                    <li>Management des équipes</li>
+                                </ul>
+                            </li>
+                        </ul><br>
+                        <h4>Veille digitale & communication</h4>
+                        <ul>
+                            <li>Communication en langue anglaise
+                                <ul>
+                                    <li>Préparation certification en communication anglaise niveau B2 européen</li>
+                                    <li>Business English</li>
+                                </ul>
+                            </li><br>
+                            <li>Techniques d'expression et de communication
+                                <ul>
+                                    <li>Prise de parole en public (techniques du théatre)</li>
+                                    <li>Développement professionnel & NetWorking</li>
+                                </ul>
+                            </li>
+                        </ul>    
+                    </div>
+                    
+                    <div id="wis5" class="tabcontent"><br>
+                        <h4>Stratégie digitale & management</h4>
+                        <ul>
+                            <li>Stratégie management d'entreprise
+                                <ul>
+                                    <li>Approche stratégique</li>
+                                    <li>Mise en oeuvre de la stratégie de l'entreprise</li>
+                                </ul>
+                            </li><br>
+                            <li>Stratégie digitale & système d'information
+                                <ul>
+                                    <li>Gouvernance et performannce d'un SI</li>
+                                    <li>Sécurité de l'information et des échanges</li>
+                                    <li>Management & transformation digitale</li>
+                                </ul>
+                            </li><br>
+                            <li>Stratégie financière
+                                <ul>
+                                    <li>Diagnostic financier</li>
+                                    <li>Choix des investissements</li>
+                                    <li>Politique financière</li>
+                                </ul>
+                            </li><br>
+                            <li>Contrôle et gestion des risques de l'entreprise
+                                <ul>
+                                    <li>Intro Audit et analyse des risques</li>
+                                    <li>Contrôle de gestion</li>
+                                </ul>
+                            </li>
+                        </ul><br>
+                        <h4>Innovation digitale & optimisation des processus métier</h4>
+                        <ul>
+                            <li>Analyse & optimisation des processus
+                                <ul>
+                                    <li>Architecture processus métier</li>
+                                    <li>Lean Management : amélioration des flux via le digital</li>
+                                </ul>
+                            </li><br>
+                            <li>Marketing digital & optimisation expérience client
+                                <ul>
+                                    <li>Diagnostic marketing</li>
+                                    <li>Stratégie commerciale & marketing</li>
+                                    <li>Digitaliser et piloter une nouvelle expérience client</li>
+                                    <li>Commerce connecté & Digital Retail</li>
+                                </ul>
+                            </li>
+                        </ul><br>
+                        <h4>Performance & analyse des données digitales</h4>
+                        <ul>
+                            <li>Big Data & Digital
+                                <ul>
+                                    <li>Conception et exploitation d'une base de données relationnelle</li>
+                                    <li>Datamining & fouille de données : concepts et techniques</li>
+                                    <li>Qualité des données environnement digital</li>
+                                </ul>
+                            </li><br>
+                            <li>Analyse des données digitales
+                                <ul>
+                                    <li>Collecte de données digitales web et mobile</li>
+                                    <li>Data Driven marketing</li>
+                                </ul>
+                            </li>
+                        </ul><br>
+                        <h4>Management de projet digital & accompagnement au changement</h4>
+                        <ul>
+                            <li>Pilotage de projet
+                                <ul>
+                                    <li>Méthodes Agiles</li>
+                                    <li>Pilotage d'un projet numérique</li>
+                                </ul>
+                            </li><br>
+                            <li>Management des ressources humaines
+                                <ul>
+                                    <li>Fonction RH : de la digitalisation à la RH augmentée</li>
+                                    <li>Management des équipes</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+            
+            <footer id="gtco-footer" role="contentinfo">
+                <div class="container">
+                    
+                    <div class="row copyright">
+                        <div class="col-md-12">
+                            <p class="pull-left">
+                                <small class="block">&copy; 2018. All Rights Reserved.</small>
+                                <small class="block">Designed by Plateau Cacao. <a href="http://www.epsi.fr/mentions-legales/" target="_blank">Mentions légales</a></small>
+                            </p>
+                            <p class="pull-right">
+                                <ul class="gtco-social-icons pull-right">
+                                    <li><a href="https://www.facebook.com/ecole.EPSI/" target="_blank"><i class="icon-facebook"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/school/epsi_2/?originalSubdomain=fr" target="_blank"><i class="icon-linkedin"></i></a></li>
+                                    <li><a href="https://www.instagram.com/wis.montpellier/?hl=fr" target="_blank"><i class="icon-instagram"></i></a></li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </footer>
+        </div>
+        
+        <div class="gototop js-top">
+            <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+        </div>
+        <!-- jQuery -->
+        <script src="../js/jquery.min.js"></script>
+        <!-- jQuery Easing -->
+        <script src="../js/jquery.easing.1.3.js"></script>
+        <!-- Bootstrap -->
+        <script src="../js/bootstrap.min.js"></script>
+        <!-- Waypoints -->
+        <script src="../js/jquery.waypoints.min.js"></script>
+        <!-- Stellar -->
+        <script src="../js/jquery.stellar.min.js"></script>
+        <!-- Magnific Popup -->
+        <script src="../js/jquery.magnific-popup.min.js"></script>
+        <script src="../js/magnific-popup-options.js"></script>
+        <!-- Main -->
+        <script src="../js/main.js"></script>
+        
+        <script>
+            $('#bach1').show();
+            function openCity(evt, cityName) {
+                // Declare all variables
+                var i, tabcontent, tablinks;
+                
+                // Get all elements with class="tabcontent" and hide them
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                
+                // Get all elements with class="tablinks" and remove the class "active"
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                
+                // Show the current tab, and add an "active" class to the button that opened the tab
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            } 
+
+            $('#epsilk').click(function() {
+                $('#epsitab').show();
+                $('#wistab').hide();
+                openCity('click', 'bach1');
+            });
+
+             $('#wislk').click(function() {
+                $('#epsitab').hide();
+                $('#wistab').show();
+                openCity('click', 'wis1');
+            });
+        </script>
+    </body>
+    </html>
+    
