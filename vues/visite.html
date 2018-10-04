@@ -23,499 +23,531 @@
 	<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400, 900" rel="stylesheet"> -->
   
   <script>
-  // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(cityName).style.display = "block";
-      evt.currentTarget.className += " active";
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+    
+    var modal = document.getElementById('myModal');
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    
+    // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
       
-      var modal = document.getElementById('myModal');
+      // When the user clicks on the button, open the modal
+      btn.onclick = function() {
+        alert('');
+        modal.style.display = "block";
+      }
       
-      // Get the button that opens the modal
-      var btn = document.getElementById("myBtn");
-      
-      // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-        
-        // When the user clicks on the button, open the modal
-        btn.onclick = function() {
-          alert('');
-          modal.style.display = "block";
+      // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
         }
         
-        // When the user clicks on <span> (x), close the modal
-          span.onclick = function() {
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
             modal.style.display = "none";
           }
-          
-          // When the user clicks anywhere outside of the modal, close it
-          window.onclick = function(event) {
-            if (event.target == modal) {
-              modal.style.display = "none";
-            }
-          } 
+        } 
         
-  </script>
-
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="../css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="../css/icomoon.css">
-	<!-- Themify Icons-->
-	<link rel="stylesheet" href="../css/themify-icons.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="../css/bootstrap.css">
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="../css/magnific-popup.css">
-	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="../css/owl.carousel.min.css">
-	<link rel="stylesheet" href="../css/owl.theme.default.min.css">
-	<!-- Flexslider -->
-	<link rel="stylesheet" href="../css/flexslider.css">
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="../css/style.css">
-  
-	<!-- Modernizr JS -->
-	<script src="../js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
-    
-    <style>
-      h4 {
-        color: #271549;
-      }
-      .tab {
-        overflow: hidden;
-        border: 1px solid #ccc;
-        background-color: #38B8D7;
-        color: white;
-      }
-      
-      /* Style the buttons that are used to open the tab content */
-      .tab button {
-        background-color: inherit;
-        float: left;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        padding: 14px 16px;
-        transition: 0.3s;
-      }
-      
-      /* Change background color of buttons on hover */
-      .tab button:hover {
-        background-color: #f9d055;
-      }
-      
-      /* Create an active/current tablink class */
-      .tab button.active {
-        background-color: #f9d055;
-      }
-      
-      /* Style the tab content */
-      .tabcontent {
-        display: none;
-        padding: 6px 12px;
-        border-top: none;
-      }
-      
-      /* NAV */
-      .gtco-nav {
-        position: fixed;
-        top: 0;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        padding: 20px 0;
-        z-index: 1001;
-        background: #fff;
-        webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
-        -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
-        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
-      }
-      @media screen and (max-width: 768px) {
-        .gtco-nav {
-          padding: 20px 0;
-        }
-      }
-      .gtco-nav #gtco-logo {
-        font-size: 30px;
-        line-height: 1;
-        margin: 0;
-        padding: 0;
-        font-weight: bold;
-      }
-      .gtco-nav #gtco-logo em {
-        color: #fff;
-        font-weight: 100;
-        font-style: normal;
-        -webkit-transition: 0.2s;
-        -o-transition: 0.2s;
-        transition: 0.2s;
-      }
-      .gtco-nav #gtco-logo a {
-        padding: 0px 10px;
-        color: #fff;
-        font-weight: 700;
-        -webkit-transition: 0.4s;
-        -o-transition: 0.4s;
-        transition: 0.4s;
-      }
-      @media screen and (max-width: 768px) {
-        .gtco-nav .menu-1, .gtco-nav .menu-2 {
-          display: none;
-        }
-      }
-      .gtco-nav ul {
-        padding: 0;
-        margin: 1px 0 0 0;
-      }
-      .gtco-nav ul li {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        display: inline;
-      }
-      .gtco-nav ul li a {
-        
-        font-size: 12px;
-        padding: 30px 10px;
-        text-transform: uppercase;
-        color: rgba(0, 0, 0, 0.5);
-        font-weight: 400 !important;
-        -webkit-transition: 0.5s;
-        -o-transition: 0.5s;
-        transition: 0.5s;
-      }
-      .gtco-nav ul li a:hover, .gtco-nav ul li a:focus, .gtco-nav ul li a:active {
-        color: #000000;
-      }
-      .gtco-nav ul li.has-dropdown {
-        position: relative;
-      }
-      .gtco-nav ul li.has-dropdown .dropdown {
-        width: 130px;
-        -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
-        -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
-        box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
-        z-index: 1002;
-        visibility: hidden;
-        opacity: 0;
-        position: absolute;
-        top: 40px;
-        left: 0;
-        text-align: left;
-        background: #fff;
-        padding: 20px;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        -ms-border-radius: 4px;
-        border-radius: 4px;
-        -webkit-transition: 0s;
-        -o-transition: 0s;
-        transition: 0s;
-      }
-      .gtco-nav ul li.has-dropdown .dropdown:before {
-        bottom: 100%;
-        left: 40px;
-        border: solid transparent;
-        content: " ";
-        height: 0;
-        width: 0;
-        position: absolute;
-        pointer-events: none;
-        border-bottom-color: #fff;
-        border-width: 8px;
-        margin-left: -8px;
-      }
-      .gtco-nav ul li.has-dropdown .dropdown li {
-        display: block;
-        margin-bottom: 7px;
-      }
-      .gtco-nav ul li.has-dropdown .dropdown li:last-child {
-        margin-bottom: 0;
-      }
-      .gtco-nav ul li.has-dropdown .dropdown li a {
-        padding: 2px 0;
-        display: block;
-        color: #999999;
-        line-height: 1.2;
-        text-transform: none;
-        font-size: 15px;
-      }
-      .gtco-nav ul li.has-dropdown .dropdown li a:hover {
-        color: #000;
-      }
-      .gtco-nav ul li.has-dropdown .dropdown li.active > a {
-        color: #000 !important;
-      }
-      .gtco-nav ul li.has-dropdown:hover a, .gtco-nav ul li.has-dropdown:focus a {
-        color: #fff;
-      }
-      .gtco-nav ul li.btn-cta a {
-        color: #fff;
-      }
-      .gtco-nav ul li.btn-cta a span {
-        border: none !important;
-        background: rgba(255, 255, 255, 0.2);
-        padding: 4px 20px;
-        display: -moz-inline-stack;
-        display: inline-block;
-        zoom: 1;
-        *display: inline;
-        -webkit-transition: 0.3s;
-        -o-transition: 0.3s;
-        transition: 0.3s;
-        background: #F9D055;
-        color: #fff;
-        border-radius: 30px;
-      }
-      
-      .gtco-nav ul li.active > a {
-        color: #fff !important;
-      }
-      .gtco-nav.scrolled {
-        background: #fff;
-        webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
-        -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
-        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
-      }
-      .gtco-nav.scrolled ul {
-        padding: 0;
-        margin: 1px 0 0 0;
-      }
-      .gtco-nav.scrolled ul li {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        display: inline;
-      }
-      .gtco-nav.scrolled ul li a {
-        color: rgba(0, 0, 0, 0.5);
-      }
-      
-      .gtco-nav.scrolled ul li.active > a {
-        color: #f9d055 !important;
-      }
-      .gtco-nav.scrolled ul li.btn-cta a {
-        color: #fff;
-      }
-      .gtco-nav.scrolled ul li.btn-cta a span {
-        border: none !important;
-        background: #f9d055;
-        padding: 4px 20px;    
-      }
-      
-      .gtco-nav.scrolled #gtco-logo em, .gtco-nav.scrolled #gtco-logo a {
-        color: #000;
-      }
-      
-      /* The Modal (background) */
-      .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-      }
-      
-      /* Modal Content/Box */
-      .modal-content {
-        background-color: #fefefe;
-        margin: 15% auto; /* 15% from the top and centered */
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%; /* Could be more or less, depending on screen size */
-      }
-      
-      /* The Close Button */
-      .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-      }
-      
-      .close:hover,
-      .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-      } 
-    </style>
-	</head>
-	<body>
-    
-    <div class="gtco-loader"></div>
-    
-    <div id="page">
-      <nav class="gtco-nav" role="navigation">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-2 col-xs-12">
-              <div id="gtco-logo"><a href="../index.html"><img src="../images/logo.png" style="height:50px;"/></a></div>
-            </div>
-            <div class="col-xs-10 text-right">
-              <ul>
-                <li><a href="../index.html" data-nav-section="accueil">Accueil</a></li>
-                <li><a href="vieEtudiante.html">Vie étudiante</a></li>
-                <li><a href="visite.html" data-nav-section="visite">Visite</a></li>
-                <li><a href="formations.html" data-nav-section="formations">Formations</a></li>
-                <li class="btn-cta"><a href="contact.html" data-nav-section="contact"><span>Contact</span></a></li>
-              </ul>
-            </div>
-          </div>
-          
-        </div>
-      </nav>
-      
-      <section id="gtco-about" data-section="about">
-        <div class="container">
-          <?xml version="1.0" encoding="utf-8"?>
-          <!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          viewBox="0 0 800 800" style="enable-background:new 0 0 800 800;" xml:space="preserve">
-          <style type="text/css">
-            .st0{display:none;}
-            .st1{opacity:0.4;fill:#515151;}
-            .st2{opacity:0.4;fill:#FCF5D6;}
-            .st3{fill:#38B8D7;}
-            .st10{fill:red;}
-            .st4{fill:none;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-miterlimit:10;}
-          </style>
-          <g id="le_dessous" class="st0">
-            
-            <image style="display:inline;overflow:visible;opacity:0.64;" width="853" height="480" xlink:href="../../42909317_288544428419149_412490201001099264_n.jpg"  transform="matrix(1.4103 0 0 1.4125 -170 37)">
-            </image>
-          </g>
-          <g id="Calque_3">
-            <rect x="80" y="268" class="st1" width="644" height="349"/>
-            <polygon class="st2" points="79,411 470,410 470,438 436,438 509,438 509,356 639,356 639,382 547,382 547,479 379,479 379,439 
-            80,439 	"/>
-          </g>
-          <g id="pieces_en_couleur">
-            <polygon id="myBtn" class="st10" points="182,410.7 183,269.7 80,268 80,356.5 131,356 134,410 	"/>
-            <rect x="182" y="269" class="st3" width="108" height="140.5"/>
-            <polygon class="st3" points="290,409 290,269 469.7,269 469.7,410 	"/>
-            <rect x="590.3" y="268" class="st3" width="132.7" height="88"/>
-            <polygon class="st3" points="721.7,560.3 721.7,433.5 547.7,433.5 547.7,562 	"/>
-            <polygon class="st3" points="289.7,439 80,439 80,617 289.5,617 	"/>
-            <polygon class="st3" points="486.5,479 379,479 379,557 486,557 	"/>
-          </g>
-          <g id="map">
-            <polyline class="st4" points="80,615 80,269 184.3,269 723,269 723,615 80,615 	"/>
-            <line class="st4" x1="182" y1="410" x2="182" y2="269"/>
-            <polyline class="st4" points="80,358.7 134,358.7 134,412 166,412 	"/>
-            <polyline class="st4" points="94,412 106,412 106,358.7 	"/>
-            <line class="st4" x1="80" y1="438.7" x2="88" y2="438.7"/>
-            <line class="st4" x1="80" y1="412" x2="84" y2="412"/>
-            <line class="st4" x1="106" y1="439" x2="256" y2="439"/>
-            <polyline class="st4" points="277,439 292.3,439 379,439 	"/>
-            <polyline class="st4" points="289.7,615 289.7,527 289.7,439 	"/>
-            <polyline class="st4" points="356,457 356,525 290,525 	"/>
-            <polyline class="st4" points="289.7,269 289.7,410 393,410 	"/>
-            <line class="st4" x1="202.5" y1="409.5" x2="289.5" y2="409.5"/>
-            <polyline class="st4" points="469.7,269 469.7,437.5 435.5,437.5 	"/>
-            <line class="st4" x1="410.5" y1="409.5" x2="469.7" y2="409.5"/>
-            <polyline class="st4" points="469.7,356.3 508.3,356.3 551.5,356.3 	"/>
-            <line class="st4" x1="508.5" y1="438.5" x2="508.5" y2="356.5"/>
-            <polyline class="st4" points="462.5,464.5 462.5,478.5 378.5,478.5 378.5,558 378.5,615 	"/>
-            <line class="st4" x1="410.5" y1="557.5" x2="378.5" y2="557.5"/>
-            <line class="st4" x1="426.5" y1="557.5" x2="426.5" y2="615"/>
-            <polyline class="st4" points="440.5,557.5 458.3,557.5 469.5,557.5 	"/>
-            <line class="st4" x1="456.7" y1="615" x2="456.7" y2="557.5"/>
-            <line class="st4" x1="486.5" y1="572.5" x2="486.5" y2="615"/>
-            <polyline class="st4" points="547.5,474.5 547.5,478.5 486.5,478.5 486.5,539.5 547.5,539.5 547.5,494.5 	"/>
-            <polyline class="st4" points="569.5,562.5 528.5,562.5 528.5,615 	"/>
-            <polyline class="st4" points="585.5,562.5 590.5,562.5 590.5,615 	"/>
-            <line class="st4" x1="675.5" y1="560.5" x2="723" y2="560.5"/>
-            <polyline class="st4" points="656.5,560.5 643.5,560.5 643.5,615 	"/>
-            <polyline class="st4" points="590.3,269 590.3,356.5 575.5,356.5 	"/>
-            <line class="st4" x1="617.5" y1="353.5" x2="723" y2="353.5"/>
-            <polyline class="st4" points="638.5,376.5 638.5,382.5 547.5,382.5 547.5,433.5 723,433.5 	"/>
-          </g>
-        </svg>
-        
-        <div id="myModal" class="modal">
-          
-          <!-- Modal content -->
-          <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Some text in the Modal..</p>
-          </div>
-          
-        </div>
-        
-      </div>
-    </section>
-    
-    <footer id="gtco-footer" role="contentinfo">
-      <div class="container">
-        
-        <div class="row copyright">
-          <div class="col-md-12">
-            <p class="pull-left">
-              <small class="block">&copy; 2018. All Rights Reserved.</small>
-              <small class="block">Designed by Plateau Cacao. <a href="http://www.epsi.fr/mentions-legales/" target="_blank">Mentions légales</a></small>
-            </p>
-            <p class="pull-right">
-              <ul class="gtco-social-icons pull-right">
-                <li><a href="https://www.facebook.com/ecole.EPSI/" target="_blank"><i class="icon-facebook"></i></a></li>
-                <li><a href="https://www.linkedin.com/school/epsi_2/?originalSubdomain=fr" target="_blank"><i class="icon-linkedin"></i></a></li>
-                <li><a href="https://www.instagram.com/wis.montpellier/?hl=fr" target="_blank"><i class="icon-instagram"></i></a></li>
-              </ul>
-            </p>
-          </div>
-        </div>
-        
-      </div>
-    </footer>
-  </div>
-  
-  <div class="gototop js-top">
-    <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-  </div>
-  <!-- jQuery -->
-  <script src="../js/jquery.min.js"></script>
-  <!-- jQuery Easing -->
-  <script src="../js/jquery.easing.1.3.js"></script>
-  <!-- Bootstrap -->
-  <script src="../js/bootstrap.min.js"></script>
-  <!-- Waypoints -->
-  <script src="../js/jquery.waypoints.min.js"></script>
-  <!-- Stellar -->
-  <script src="../js/jquery.stellar.min.js"></script>
-  <!-- Magnific Popup -->
-  <script src="../js/jquery.magnific-popup.min.js"></script>
-  <script src="../js/magnific-popup-options.js"></script>
-  <!-- Main -->
-  <script src="../js/main.js"></script>
-  
-  <script>
-    function openCity(evt, cityName) {
-      // Declare all variables
-      var i, tabcontent, tablinks;
-      
-      // Get all elements with class="tabcontent" and hide them
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      
-      // Get all elements with class="tablinks" and remove the class "active"
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-    }
-      
-      
       </script>
-    </body>
-    </html>
-    
+      
+      <!-- Animate.css -->
+      <link rel="stylesheet" href="../css/animate.css">
+      <!-- Icomoon Icon Fonts-->
+      <link rel="stylesheet" href="../css/icomoon.css">
+      <!-- Themify Icons-->
+      <link rel="stylesheet" href="../css/themify-icons.css">
+      <!-- Bootstrap  -->
+      <link rel="stylesheet" href="../css/bootstrap.css">
+      <!-- Magnific Popup -->
+      <link rel="stylesheet" href="../css/magnific-popup.css">
+      <!-- Owl Carousel  -->
+      <link rel="stylesheet" href="../css/owl.carousel.min.css">
+      <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+      <!-- Flexslider -->
+      <link rel="stylesheet" href="../css/flexslider.css">
+      <!-- Theme style  -->
+      <link rel="stylesheet" href="../css/style.css">
+      
+      <!-- Modernizr JS -->
+      <script src="../js/modernizr-2.6.2.min.js"></script>
+      <!-- FOR IE9 below -->
+      <!--[if lt IE 9]>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+        
+        <style>
+          h4 {
+            color: #271549;
+          }
+          .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #38B8D7;
+            color: white;
+          }
+          
+          /* Style the buttons that are used to open the tab content */
+          .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+          }
+          
+          /* Change background color of buttons on hover */
+          .tab button:hover {
+            background-color: #f9d055;
+          }
+          
+          /* Create an active/current tablink class */
+          .tab button.active {
+            background-color: #f9d055;
+          }
+          
+          /* Style the tab content */
+          .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border-top: none;
+          }
+          
+          /* NAV */
+          .gtco-nav {
+            position: fixed;
+            top: 0;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            padding: 20px 0;
+            z-index: 1001;
+            background: #fff;
+            webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+            -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+            box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+          }
+          @media screen and (max-width: 768px) {
+            .gtco-nav {
+              padding: 20px 0;
+            }
+          }
+          .gtco-nav #gtco-logo {
+            font-size: 30px;
+            line-height: 1;
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+          }
+          .gtco-nav #gtco-logo em {
+            color: #fff;
+            font-weight: 100;
+            font-style: normal;
+            -webkit-transition: 0.2s;
+            -o-transition: 0.2s;
+            transition: 0.2s;
+          }
+          .gtco-nav #gtco-logo a {
+            padding: 0px 10px;
+            color: #fff;
+            font-weight: 700;
+            -webkit-transition: 0.4s;
+            -o-transition: 0.4s;
+            transition: 0.4s;
+          }
+          @media screen and (max-width: 768px) {
+            .gtco-nav .menu-1, .gtco-nav .menu-2 {
+              display: none;
+            }
+          }
+          .gtco-nav ul {
+            padding: 0;
+            margin: 1px 0 0 0;
+          }
+          .gtco-nav ul li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: inline;
+          }
+          .gtco-nav ul li a {
+            
+            font-size: 12px;
+            padding: 30px 10px;
+            text-transform: uppercase;
+            color: rgba(0, 0, 0, 0.5);
+            font-weight: 400 !important;
+            -webkit-transition: 0.5s;
+            -o-transition: 0.5s;
+            transition: 0.5s;
+          }
+          .gtco-nav ul li a:hover, .gtco-nav ul li a:focus, .gtco-nav ul li a:active {
+            color: #000000;
+          }
+          .gtco-nav ul li.has-dropdown {
+            position: relative;
+          }
+          .gtco-nav ul li.has-dropdown .dropdown {
+            width: 130px;
+            -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+            -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+            box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+            z-index: 1002;
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            text-align: left;
+            background: #fff;
+            padding: 20px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -ms-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-transition: 0s;
+            -o-transition: 0s;
+            transition: 0s;
+          }
+          .gtco-nav ul li.has-dropdown .dropdown:before {
+            bottom: 100%;
+            left: 40px;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-bottom-color: #fff;
+            border-width: 8px;
+            margin-left: -8px;
+          }
+          .gtco-nav ul li.has-dropdown .dropdown li {
+            display: block;
+            margin-bottom: 7px;
+          }
+          .gtco-nav ul li.has-dropdown .dropdown li:last-child {
+            margin-bottom: 0;
+          }
+          .gtco-nav ul li.has-dropdown .dropdown li a {
+            padding: 2px 0;
+            display: block;
+            color: #999999;
+            line-height: 1.2;
+            text-transform: none;
+            font-size: 15px;
+          }
+          .gtco-nav ul li.has-dropdown .dropdown li a:hover {
+            color: #000;
+          }
+          .gtco-nav ul li.has-dropdown .dropdown li.active > a {
+            color: #000 !important;
+          }
+          .gtco-nav ul li.has-dropdown:hover a, .gtco-nav ul li.has-dropdown:focus a {
+            color: #fff;
+          }
+          .gtco-nav ul li.btn-cta a {
+            color: #fff;
+          }
+          .gtco-nav ul li.btn-cta a span {
+            border: none !important;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 20px;
+            display: -moz-inline-stack;
+            display: inline-block;
+            zoom: 1;
+            *display: inline;
+            -webkit-transition: 0.3s;
+            -o-transition: 0.3s;
+            transition: 0.3s;
+            background: #F9D055;
+            color: #fff;
+            border-radius: 30px;
+          }
+          
+          .gtco-nav ul li.active > a {
+            color: #fff !important;
+          }
+          .gtco-nav.scrolled {
+            background: #fff;
+            webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+            -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+            box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+          }
+          .gtco-nav.scrolled ul {
+            padding: 0;
+            margin: 1px 0 0 0;
+          }
+          .gtco-nav.scrolled ul li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: inline;
+          }
+          .gtco-nav.scrolled ul li a {
+            color: rgba(0, 0, 0, 0.5);
+          }
+          
+          .gtco-nav.scrolled ul li.active > a {
+            color: #f9d055 !important;
+          }
+          .gtco-nav.scrolled ul li.btn-cta a {
+            color: #fff;
+          }
+          .gtco-nav.scrolled ul li.btn-cta a span {
+            border: none !important;
+            background: #f9d055;
+            padding: 4px 20px;    
+          }
+          
+          .gtco-nav.scrolled #gtco-logo em, .gtco-nav.scrolled #gtco-logo a {
+            color: #000;
+          }
+          
+          /* The Modal (background) */
+          .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+          }
+          
+          /* Modal Content/Box */
+          .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+          }
+          
+          /* The Close Button */
+          .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+          }
+          
+          .close:hover,
+          .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+          } 
+        </style>
+      </head>
+      <body>
+        
+        <div class="gtco-loader"></div>
+        
+        <div id="page">
+          <nav class="gtco-nav" role="navigation">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-2 col-xs-12">
+                  <div id="gtco-logo"><a href="../index.html"><img src="../images/logo.png" style="height:50px;"/></a></div>
+                </div>
+                <div class="col-xs-10 text-right">
+                  <ul>
+                    <li><a href="../index.html" data-nav-section="accueil">Accueil</a></li>
+                    <li><a href="vieEtudiante.html">Vie étudiante</a></li>
+                    <li><a href="visite.html" data-nav-section="visite">Visite</a></li>
+                    <li><a href="formations.html" data-nav-section="formations">Formations</a></li>
+                    <li class="btn-cta"><a href="contact.html" data-nav-section="contact"><span>Contact</span></a></li>
+                  </ul>
+                </div>
+              </div>
+              
+            </div>
+          </nav>
+          
+          <section id="gtco-about" data-section="about">
+            <div class="container">
+              <div class="tab">
+                <button class="tablinks" onclick="openCity(event, 'apo')" style="width: 50%">Apothicaire</button>
+                <button class="tablinks" onclick="openCity(event, 'cv')" style="width: 50%">Croix Verte</button>
+              </div>
+              
+              <!--?xml version="1.0" encoding="utf-8"?-->
+              <!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 800 800" style="" xml:space="preserve">
+                <style type="text/css">
+                  .st0{display:none;}
+                  .st1{opacity:0.4;fill:#515151;}
+                  .st2{opacity:0.4;fill:#FCF5D6;}
+                  .st3{fill:#38B8D7;}
+                  .st4{fill:none;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-miterlimit:10;}
+                </style>
+                <g id="le_dessous" class="st0">
+                  
+                  <image style="display:inline;overflow:visible;opacity:0.64;" width="853" height="480" xlink:href="../../42909317_288544428419149_412490201001099264_n.jpg" transform="matrix(1.4103 0 0 1.4125 -170 37)">
+                  </image>
+                </g>
+                <g id="Calque_3">
+                  <path class="st1 DyroBwZW_0" width="644" height="349" d="M80 268 L724 268 L724 617 L80 617 Z"></path>
+                  <path class="st2 DyroBwZW_1" d="M79,411L470,410L470,438L436,438L509,438L509,356L639,356L639,382L547,382L547,479L379,479L379,439L
+                  80,439Z"></path>
+                </g>
+                <g id="pieces_en_couleur">
+                  <path onclick="openMod();" class="st3 DyroBwZW_2" d="M182,410.7L183,269.7L80,268L80,356.5L131,356L134,410Z"></path>
+                  <path class="st3 DyroBwZW_3" width="108" height="140.5" d="M182 269 L290 269 L290 409.5 L182 409.5 Z"></path>
+                  <path class="st3 DyroBwZW_4" d="M290,409L290,269L469.7,269L469.7,410Z"></path>
+                  <path class="st3 DyroBwZW_5" width="132.7" height="88" d="M590.3 268 L723 268 L723 356 L590.3 356 Z"></path>
+                  <path class="st3 DyroBwZW_6" d="M721.7,560.3L721.7,433.5L547.7,433.5L547.7,562Z"></path>
+                  <path class="st3 DyroBwZW_7" d="M289.7,439L80,439L80,617L289.5,617Z"></path>
+                  <path class="st3 DyroBwZW_8" d="M486.5,479L379,479L379,557L486,557Z"></path>
+                </g>
+                <g id="map">
+                  <path class="st4 DyroBwZW_9" d="M80,615L80,269L184.3,269L723,269L723,615L80,615"></path>
+                  <path class="st4 DyroBwZW_10" d="M182,410L182,269"></path>
+                  <path class="st4 DyroBwZW_11" d="M80,358.7L134,358.7L134,412L166,412"></path>
+                  <path class="st4 DyroBwZW_12" d="M94,412L106,412L106,358.7"></path>
+                  <path class="st4 DyroBwZW_13" d="M80,438.7L88,438.7"></path>
+                  <path class="st4 DyroBwZW_14" d="M80,412L84,412"></path>
+                  <path class="st4 DyroBwZW_15" d="M106,439L256,439"></path>
+                  <path class="st4 DyroBwZW_16" d="M277,439L292.3,439L379,439"></path>
+                  <path class="st4 DyroBwZW_17" d="M289.7,615L289.7,527L289.7,439"></path>
+                  <path class="st4 DyroBwZW_18" d="M356,457L356,525L290,525"></path>
+                  <path class="st4 DyroBwZW_19" d="M289.7,269L289.7,410L393,410"></path>
+                  <path class="st4 DyroBwZW_20" d="M202.5,409.5L289.5,409.5"></path>
+                  <path class="st4 DyroBwZW_21" d="M469.7,269L469.7,437.5L435.5,437.5"></path>
+                  <path class="st4 DyroBwZW_22" d="M410.5,409.5L469.7,409.5"></path>
+                  <path class="st4 DyroBwZW_23" d="M469.7,356.3L508.3,356.3L551.5,356.3"></path>
+                  <path class="st4 DyroBwZW_24" d="M508.5,438.5L508.5,356.5"></path>
+                  <path class="st4 DyroBwZW_25" d="M462.5,464.5L462.5,478.5L378.5,478.5L378.5,558L378.5,615"></path>
+                  <path class="st4 DyroBwZW_26" d="M410.5,557.5L378.5,557.5"></path>
+                  <path class="st4 DyroBwZW_27" d="M426.5,557.5L426.5,615"></path>
+                  <path class="st4 DyroBwZW_28" d="M440.5,557.5L458.3,557.5L469.5,557.5"></path>
+                  <path class="st4 DyroBwZW_29" d="M456.7,615L456.7,557.5"></path>
+                  <path class="st4 DyroBwZW_30" d="M486.5,572.5L486.5,615"></path>
+                  <path class="st4 DyroBwZW_31" d="M547.5,474.5L547.5,478.5L486.5,478.5L486.5,539.5L547.5,539.5L547.5,494.5"></path>
+                  <path class="st4 DyroBwZW_32" d="M569.5,562.5L528.5,562.5L528.5,615"></path>
+                  <path class="st4 DyroBwZW_33" d="M585.5,562.5L590.5,562.5L590.5,615"></path>
+                  <path class="st4 DyroBwZW_34" d="M675.5,560.5L723,560.5"></path>
+                  <path class="st4 DyroBwZW_35" d="M656.5,560.5L643.5,560.5L643.5,615"></path>
+                  <path class="st4 DyroBwZW_36" d="M590.3,269L590.3,356.5L575.5,356.5"></path>
+                  <path class="st4 DyroBwZW_37" d="M617.5,353.5L723,353.5"></path>
+                  <path class="st4 DyroBwZW_38" d="M638.5,376.5L638.5,382.5L547.5,382.5L547.5,433.5L723,433.5"></path>
+                </g>
+                <style data-made-with="vivus-instant">.DyroBwZW_0{stroke-dasharray:1986 1988;stroke-dashoffset:1987;animation:DyroBwZW_draw 2000ms linear 0ms forwards;}.DyroBwZW_1{stroke-dasharray:1489 1491;stroke-dashoffset:1490;animation:DyroBwZW_draw 2000ms linear 26ms forwards;}.DyroBwZW_2{stroke-dasharray:486 488;stroke-dashoffset:487;animation:DyroBwZW_draw 2000ms linear 52ms forwards;}.DyroBwZW_3{stroke-dasharray:497 499;stroke-dashoffset:498;animation:DyroBwZW_draw 2000ms linear 78ms forwards;}.DyroBwZW_4{stroke-dasharray:641 643;stroke-dashoffset:642;animation:DyroBwZW_draw 2000ms linear 105ms forwards;}.DyroBwZW_5{stroke-dasharray:442 444;stroke-dashoffset:443;animation:DyroBwZW_draw 2000ms linear 131ms forwards;}.DyroBwZW_6{stroke-dasharray:604 606;stroke-dashoffset:605;animation:DyroBwZW_draw 2000ms linear 157ms forwards;}.DyroBwZW_7{stroke-dasharray:776 778;stroke-dashoffset:777;animation:DyroBwZW_draw 2000ms linear 184ms forwards;}.DyroBwZW_8{stroke-dasharray:371 373;stroke-dashoffset:372;animation:DyroBwZW_draw 2000ms linear 210ms forwards;}.DyroBwZW_9{stroke-dasharray:1978 1980;stroke-dashoffset:1979;animation:DyroBwZW_draw 2000ms linear 236ms forwards;}.DyroBwZW_10{stroke-dasharray:141 143;stroke-dashoffset:142;animation:DyroBwZW_draw 2000ms linear 263ms forwards;}.DyroBwZW_11{stroke-dasharray:140 142;stroke-dashoffset:141;animation:DyroBwZW_draw 2000ms linear 289ms forwards;}.DyroBwZW_12{stroke-dasharray:66 68;stroke-dashoffset:67;animation:DyroBwZW_draw 2000ms linear 315ms forwards;}.DyroBwZW_13{stroke-dasharray:8 10;stroke-dashoffset:9;animation:DyroBwZW_draw 2000ms linear 342ms forwards;}.DyroBwZW_14{stroke-dasharray:4 6;stroke-dashoffset:5;animation:DyroBwZW_draw 2000ms linear 368ms forwards;}.DyroBwZW_15{stroke-dasharray:150 152;stroke-dashoffset:151;animation:DyroBwZW_draw 2000ms linear 394ms forwards;}.DyroBwZW_16{stroke-dasharray:102 104;stroke-dashoffset:103;animation:DyroBwZW_draw 2000ms linear 421ms forwards;}.DyroBwZW_17{stroke-dasharray:176 178;stroke-dashoffset:177;animation:DyroBwZW_draw 2000ms linear 447ms forwards;}.DyroBwZW_18{stroke-dasharray:134 136;stroke-dashoffset:135;animation:DyroBwZW_draw 2000ms linear 473ms forwards;}.DyroBwZW_19{stroke-dasharray:245 247;stroke-dashoffset:246;animation:DyroBwZW_draw 2000ms linear 499ms forwards;}.DyroBwZW_20{stroke-dasharray:87 89;stroke-dashoffset:88;animation:DyroBwZW_draw 2000ms linear 526ms forwards;}.DyroBwZW_21{stroke-dasharray:203 205;stroke-dashoffset:204;animation:DyroBwZW_draw 2000ms linear 552ms forwards;}.DyroBwZW_22{stroke-dasharray:60 62;stroke-dashoffset:61;animation:DyroBwZW_draw 2000ms linear 578ms forwards;}.DyroBwZW_23{stroke-dasharray:82 84;stroke-dashoffset:83;animation:DyroBwZW_draw 2000ms linear 605ms forwards;}.DyroBwZW_24{stroke-dasharray:82 84;stroke-dashoffset:83;animation:DyroBwZW_draw 2000ms linear 631ms forwards;}.DyroBwZW_25{stroke-dasharray:235 237;stroke-dashoffset:236;animation:DyroBwZW_draw 2000ms linear 657ms forwards;}.DyroBwZW_26{stroke-dasharray:32 34;stroke-dashoffset:33;animation:DyroBwZW_draw 2000ms linear 684ms forwards;}.DyroBwZW_27{stroke-dasharray:58 60;stroke-dashoffset:59;animation:DyroBwZW_draw 2000ms linear 710ms forwards;}.DyroBwZW_28{stroke-dasharray:29 31;stroke-dashoffset:30;animation:DyroBwZW_draw 2000ms linear 736ms forwards;}.DyroBwZW_29{stroke-dasharray:58 60;stroke-dashoffset:59;animation:DyroBwZW_draw 2000ms linear 763ms forwards;}.DyroBwZW_30{stroke-dasharray:43 45;stroke-dashoffset:44;animation:DyroBwZW_draw 2000ms linear 789ms forwards;}.DyroBwZW_31{stroke-dasharray:232 234;stroke-dashoffset:233;animation:DyroBwZW_draw 2000ms linear 815ms forwards;}.DyroBwZW_32{stroke-dasharray:94 96;stroke-dashoffset:95;animation:DyroBwZW_draw 2000ms linear 842ms forwards;}.DyroBwZW_33{stroke-dasharray:58 60;stroke-dashoffset:59;animation:DyroBwZW_draw 2000ms linear 868ms forwards;}.DyroBwZW_34{stroke-dasharray:48 50;stroke-dashoffset:49;animation:DyroBwZW_draw 2000ms linear 894ms forwards;}.DyroBwZW_35{stroke-dasharray:68 70;stroke-dashoffset:69;animation:DyroBwZW_draw 2000ms linear 921ms forwards;}.DyroBwZW_36{stroke-dasharray:103 105;stroke-dashoffset:104;animation:DyroBwZW_draw 2000ms linear 947ms forwards;}.DyroBwZW_37{stroke-dasharray:106 108;stroke-dashoffset:107;animation:DyroBwZW_draw 2000ms linear 973ms forwards;}.DyroBwZW_38{stroke-dasharray:324 326;stroke-dashoffset:325;animation:DyroBwZW_draw 2000ms linear 999ms forwards;}@keyframes DyroBwZW_draw{100%{stroke-dashoffset:0;}}@keyframes DyroBwZW_fade{0%{stroke-opacity:1;}94.44444444444444%{stroke-opacity:1;}100%{stroke-opacity:0;}}</style></svg>
+                
+                <div id="cv" class="tabcontent">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 423 650"><defs><style>.cls-1{fill:#515151;}.cls-1,.cls-3{opacity:0.4;}.cls-2{fill:#38b8d7;}.cls-3{fill:#fcf5d6;}.cls-4,.cls-5{fill:none;stroke:#000;stroke-linecap:round;stroke-width:5px;}.cls-4{stroke-linejoin:round;}.cls-5{stroke-miterlimit:10;}</style></defs><title>apothicaire</title><g id="Calque_5" data-name="Calque 5"><polygon class="cls-1" points="88.5 2.5 420.5 2.5 420.5 423.5 320 423.5 320 648 3 648 3 409 86 409 88.5 2.5"/></g><g id="Calque_4" data-name="Calque 4"><path class="cls-2" d="M632,219.5V77.5H400V189H513s-.5,41.5.5,42.5,30,0,30,0v-13Z" transform="translate(-211.5 -75.5)"/><polygon class="cls-2" points="86 163 211.5 163.5 211.5 172.5 241.5 172.5 241.5 156.5 302.5 156.5 302.5 209.5 86 210.5 86 163"/><polyline class="cls-2" points="302 143 420.5 143.5 420.5 246 298.5 246.5 296 156.44 302.5 156.5 302 143"/><polyline class="cls-2" points="332 423.5 332 245.5 420.5 245.5 420.5 423.5 332 423.5"/></g><g id="Calque_6" data-name="Calque 6"><polygon class="cls-3" points="298.5 246.5 331.5 245.5 331.5 423.5 319.5 423.5 319.5 458.5 187.5 458.5 187.5 647.5 152.5 647.5 152.5 407.5 247.5 407.5 246.5 417.5 268.5 413.5 295.5 386.5 295.5 341.5 246.5 341.5 246.5 309.5 295.5 309.5 298.5 246.5"/></g><g id="Calque_2" data-name="Calque 2"><polygon class="cls-4" points="211.5 163.5 211.5 115.5 302.5 115.5 302.5 156.5 241.5 156.5 241.5 172.5 211.5 172.5 211.5 163.5"/></g><g id="Calque_3" data-name="Calque 3"><polygon class="cls-5" points="85.5 408.5 85.5 2.5 420.5 2.5 420.5 423.5 319.5 423.5 319.5 647.5 2.5 647.5 2.5 408.5 85.5 408.5"/><line class="cls-5" x1="85.5" y1="67.5" x2="168" y2="67.5"/><path class="cls-5" d="M400,194.5v0Z" transform="translate(-211.5 -75.5)"/><line class="cls-5" x1="85.5" y1="163.5" x2="188" y2="163.5"/><line class="cls-5" x1="332" y1="107" x2="332" y2="143"/><line class="cls-5" x1="332" y1="41" x2="332" y2="64"/><line class="cls-5" x1="352" y1="143" x2="420.5" y2="143"/><polyline class="cls-5" points="332 394 332 246 420.5 246.5 352 246.5"/><line class="cls-5" x1="86.5" y1="210.5" x2="176" y2="210.5"/><polyline class="cls-5" points="254 210 253 277 296 277 296 210 199 210 199 310"/><polyline class="cls-5" points="127 310 229 310 229 342"/><line class="cls-5" x1="296" y1="310" x2="247" y2="310"/><polyline class="cls-5" points="286 342 296 342 296 386 268.5 413.5"/><line class="cls-5" x1="85" y1="408" x2="204" y2="408"/><polyline class="cls-5" points="298.5 246.5 331.5 245.5 332 423.5 319.5 423.5 320 459 187.5 458.5 188 647.5 188 459 296 459"/><polyline class="cls-5" points="31 516 153 516 153 446"/><polyline class="cls-5" points="153 547 153 647.5 153 408 247 408 247 421 247 342 260 342"/><path class="cls-5" d="M513.5,190.5" transform="translate(-211.5 -75.5)"/></g></svg>
+                </div>
+                
+                
+                <div id="myModal" class="modal">
+                  
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Some text in the Modal..</p>
+                  </div>
+                  
+                </div>
+                
+              </div>
+            </section>
+            
+            <footer id="gtco-footer" role="contentinfo">
+              <div class="container">
+                
+                <div class="row copyright">
+                  <div class="col-md-12">
+                    <p class="pull-left">
+                      <small class="block">&copy; 2018. All Rights Reserved.</small>
+                      <small class="block">Designed by Plateau Cacao. <a href="http://www.epsi.fr/mentions-legales/" target="_blank">Mentions légales</a></small>
+                    </p>
+                    <p class="pull-right">
+                      <ul class="gtco-social-icons pull-right">
+                        <li><a href="https://www.facebook.com/ecole.EPSI/" target="_blank"><i class="icon-facebook"></i></a></li>
+                        <li><a href="https://www.linkedin.com/school/epsi_2/?originalSubdomain=fr" target="_blank"><i class="icon-linkedin"></i></a></li>
+                        <li><a href="https://www.instagram.com/wis.montpellier/?hl=fr" target="_blank"><i class="icon-instagram"></i></a></li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+                
+              </div>
+            </footer>
+          </div>
+          
+          <div class="gototop js-top">
+            <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+          </div>
+          <!-- jQuery -->
+          <script src="../js/jquery.min.js"></script>
+          <!-- jQuery Easing -->
+          <script src="../js/jquery.easing.1.3.js"></script>
+          <!-- Bootstrap -->
+          <script src="../js/bootstrap.min.js"></script>
+          <!-- Waypoints -->
+          <script src="../js/jquery.waypoints.min.js"></script>
+          <!-- Stellar -->
+          <script src="../js/jquery.stellar.min.js"></script>
+          <!-- Magnific Popup -->
+          <script src="../js/jquery.magnific-popup.min.js"></script>
+          <script src="../js/magnific-popup-options.js"></script>
+          <!-- Main -->
+          <script src="../js/main.js"></script>
+          
+          <script>
+            function openCity(evt, cityName) {
+              // Declare all variables
+              var i, tabcontent, tablinks;
+              
+              // Get all elements with class="tabcontent" and hide them
+              tabcontent = document.getElementsByClassName("tabcontent");
+              for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+              }
+              
+              // Get all elements with class="tablinks" and remove the class "active"
+              tablinks = document.getElementsByClassName("tablinks");
+              for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+              }
+            }
+
+            // Get the modal
+            var modal = document.getElementById('myModal');
+            
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+            
+            // Get the <span> element that closes the modal
+              var span = document.getElementsByClassName("close")[0];
+              
+              function openMod() {
+                modal.style.display = "block";
+              }
+              
+              // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                  modal.style.display = "none";
+                }
+                
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                  if (event.target == modal) {
+                    modal.style.display = "none";
+                  }
+                } 
+                
+              </script>
+            </body>
+            </html>
+            

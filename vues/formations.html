@@ -305,8 +305,8 @@
             <section id="gtco-about" data-section="about">
                 <div class="container">
                 <div class="tab">
-                    <button id="epsilk" class="tablinks" onclick="openCity(event, 'epsi')" style="width: 50%">EPSI</button>
-                    <button id="wislk" class="tablinks" onclick="openCity(event, 'wis')" style="width: 50%">WIS</button>
+                    <button id="epsilk" class="tabHd active" onclick="openTab(event, 'epsi')" style="width: 50%">EPSI</button>
+                    <button id="wislk" class="tabHd" onclick="openTab(event, 'wis')" style="width: 50%">WIS</button>
                 </div>
                     <div id="epsitab" class="tab">
                         <button class="tablinks active" onclick="openCity(event, 'bach1')" style="width: 20%">BACHELOR 1</button>
@@ -768,18 +768,26 @@
                 // Show the current tab, and add an "active" class to the button that opened the tab
                 document.getElementById(cityName).style.display = "block";
                 evt.currentTarget.className += " active";
-            } 
+            }
 
             $('#epsilk').click(function() {
+                $('.tabcontent').hide();
                 $('#epsitab').show();
                 $('#wistab').hide();
-                openCity('click', 'bach1');
+                $('#bach1').show();
+                $(this).addClass("active");
+                $('#wislk').removeClass("active");
+                $('#bach1').addClass("active");
             });
 
              $('#wislk').click(function() {
-                $('#epsitab').hide();
+                $('.tabcontent').hide();
                 $('#wistab').show();
-                openCity('click', 'wis1');
+                $('#epsitab').hide();
+                $('#wis1').show();
+                $(this).addClass("active");
+                $('#epsilk').removeClass("active");
+                $('#wis1').addClass("active");
             });
         </script>
     </body>
