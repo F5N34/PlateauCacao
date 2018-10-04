@@ -1447,6 +1447,9 @@ form label {
               <button class="accordion">Candidats</button>
               <div class="panel">
                 <br/>
+
+
+                <div class="video1">
                 <h4>Témoignage d'un nouvel arrivant à l'école EPSI WIS, campus de Montpellier : </h4>
                 <div class="video_temoignage_gauche">
                   <iframe width="650" height="350" src="https://www.youtube.com/embed/TSf-gNlRw8U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -1454,8 +1457,14 @@ form label {
                 <div class="text_temoignage_gauche">
                     <p>Salut</p>
                   </div>
+                </div>
+
+
                 <br/>
                 <br/>
+
+
+                <div class="video2">
                 <h4>Témoignage d'un élève ayant intégré l'école en 1ère année :</h4>
                 <div class="video_temoignage_droite">
                   <iframe width="650" height="350" src="https://www.youtube.com/embed/_AEYv4i5J4E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -1463,20 +1472,32 @@ form label {
                 <div class="text_temoignage_droite">
                     <p>Salut</p>
                   </div>
+                </div>
+
+
                 <br/>
                 <br/>
+
+
+                <div class="video3">
                 <h4>Témoignage d'élèves intégrant l'EPSI après un BTS extérieur à l'école :</h4>
                 <div class="video_temoignage_gauche">
                   <iframe width="650" height="350" src="https://www.youtube.com/embed/_BeHtN6bnis" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>                                </div>                                                             
                 </div>
                 <div class="text_temoignage_gauche">
-                  <p>Salut</p>
-                </div>                
+                  <p>Salut</p>                
+                </div>    
+              </div>
+              
+
                 <br/>
                 <br/>
+
+                 
                 <button class="accordion">Professionnels</button>
                 <div class="panel">
                   <br/>
+                  <div class="video4"> 
                   <h4>Témoignage d'une professeure :</h4>
                   <div class="video_temoignage_droite">
                     <iframe width="650" height="350" src="https://www.youtube.com/embed/fxRq0z8im8E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -1534,7 +1555,28 @@ form label {
 	<script src="../js/jquery.magnific-popup.min.js"></script>
 	<script src="../js/magnific-popup-options.js"></script>
 	<!-- Main -->
-	<script src="../js/main.js"></script>
+  <script src="../js/main.js"></script>
+  
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        /* Toggle between adding and removing the "active" class,
+        to highlight the button that controls the panel */
+        this.classList.toggle("active");
+
+        /* Toggle between hiding and showing the active panel */
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
+  </script>
 
 	</body>
 </html>
